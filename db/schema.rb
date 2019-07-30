@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_07_30_074859) do
     t.date "start_date"
     t.date "end_date"
     t.string "location"
-    t.time "time"
     t.bigint "user_id"
     t.bigint "painting_id"
     t.datetime "created_at", null: false
