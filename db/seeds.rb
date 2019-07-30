@@ -22,18 +22,18 @@ User.delete_all if Rails.env.development?
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     # phone_number: Faker::PhoneNumber.cell_phone,
-    password: "123456")
+  password: "123456")
   user.save
 end
 
 User.all.each do |user|
- painting = Painting.new(
-  title: Faker::Book.title,
-  description: Faker::Commerce.product_name,
-  category: Faker::Book.genre,
-  price: Faker::Commerce.price ,
-  photo: "" ,
-  location: Faker::Address.city,
+  painting = Painting.new(
+    title: Faker::Book.title,
+    description: Faker::Commerce.product_name,
+    category: Faker::Book.genre,
+    price: Faker::Commerce.price ,
+    photo: "" ,
+    location: Faker::Address.city,
   user: user)
   painting.save
 end
@@ -50,21 +50,20 @@ end
     end_date: end_date,
     total_price: (end_date - start_date) * painting.price,
     location: Faker::Address.full_address,
-    time: Time.now,
     user: user,
     painting: painting
-    )
+  )
 end
 
 Painting.all.each do |painting|
   rand(3..5).times do
-   review = Review.new(
+    review = Review.new(
       painting: painting,
       date: Faker::Date.forward(23),
       title: Faker::Lorem.sentence,
       content: Faker::Lorem.sentences,
       rating: rand(0..5)
     )
-   review.save
+    review.save
   end
 end
