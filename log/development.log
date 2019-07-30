@@ -1676,3 +1676,18 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_up" for ::1 at 2019-07-30 19:00:30 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 19:00:32 +0800
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
