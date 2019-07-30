@@ -3,11 +3,28 @@
     div {
         * {
             font-family: $headers-font;
+            color: $blue-3;
+        }
+        form > div.form-group {
+            margin-bottom: 4vh;
         }
         img {
             width: 100%;
             height: 40vh;
             object-fit: cover;
         }
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    * {
+        margin: 0;
+        padding: 10px 20px;
+    }
+    .forget-password {
+        text-align: right;
+        flex-grow: 1;
     }
 }
