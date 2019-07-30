@@ -10,7 +10,33 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= yield %>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <a href="/"><h4 class="logo">HomeGallery</h4></a>
+      <div class="search-bar">
+        <!-- TODO: SEARCH BAR -->
+      </div>
+
+      <% if false %>
+        <!-- IF USER IS LOGGED IN -->
+        <a class="host-service">Host a service</a>
+        <!-- TODO: CREATE AVATAR -->
+      <% else %>
+        <!-- USER IS NOT LOGGED In -->
+        <!-- FIXME: erb tag link_to -->
+        <div class="options">
+          <a href="#">Login</a>
+          <a class="host-service" href="#">Host a service</a>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="<%= container unless @no_container %>" >
+      <%= yield %>
+    </div>
+
+    <!-- JAVASCRIPT -->
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

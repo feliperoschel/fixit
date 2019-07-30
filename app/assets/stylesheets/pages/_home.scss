@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+
+.background {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("home.jpeg") no-repeat center center;
+    background-size: cover;
+    div {
+        margin-top: 30vh;
+        h1 {
+            font-size: 44px;
+            font-weight: bold;
+        }
+        .mesg-top {
+            color: $green;
+        }
+    }
+}

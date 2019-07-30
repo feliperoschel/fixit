@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   # # ORIGINAL
   # devise_for :users
@@ -20,4 +21,14 @@ Rails.application.routes.draw do
   resources :bookings, only: [:new, :create, :edit, :update, :show, :index]
 
 
+=======
+  get 'reviews/create'
+  get 'reviews/new'
+  devise_for :users
+  resources :paintings do
+    resources :reviews, only: [:new, :create]
+  end
+  resources :bookings, only: [:new, :create, :edit, :update, :show, :index]
+  root to: 'pages#home'
+>>>>>>> master
 end
