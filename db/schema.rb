@@ -13,14 +13,13 @@
 ActiveRecord::Schema.define(version: 2019_07_30_074859) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.float "total_price"
     t.date "start_date"
     t.date "end_date"
     t.string "location"
-    t.time "time"
     t.bigint "user_id"
     t.bigint "painting_id"
     t.datetime "created_at", null: false
