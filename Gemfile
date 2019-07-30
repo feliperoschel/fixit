@@ -28,4 +28,6 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+# Devise - authentication gem for Rails
+gem 'devise'
 gem 'pundit'
