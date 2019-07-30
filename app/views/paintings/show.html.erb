@@ -1,0 +1,7 @@
+<p>paintings#show show.html.erb</p>
+<p><%= @painting.title %></p>
+<p><%= @painting.description %></p>
+<p><%= @painting.price %></p>
+<p><%= @painting.category %></p>
+<p><%= @painting.location %></p>
+<%= link_to "Book", new_painting_booking_path(@painting) %>
