@@ -1882,3 +1882,529 @@ FOREIGN KEY ("painting_id")
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
 >>>>>>> master
+Started GET "/bookings/3" for ::1 at 2019-07-30 18:41:40 +0800
+  [1m[35m (40.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 401 Unauthorized in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:41:40 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (134.7ms)
+Completed 500 Internal Server Error in 4632ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007f95baa4e320>:0x00007f95be2fa638>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container unless @no_container %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140529150140'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:49:02 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 623ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007f95baecbec0>:0x00007f95baeca4f8>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <!-- <div class="<%= container unless @no_container %>" > -->
+    36:       <%= yield %>
+    37:     <!-- </div> -->
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140531475180'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:49:04 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 705ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007f95baecbec0>:0x00007f95c1a5a8d0>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <!-- <div class="<%= container unless @no_container %>" > -->
+    36:       <%= yield %>
+    37:     <!-- </div> -->
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140587918000'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:49:26 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 671ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007f95baecbec0>:0x00007f95bb467618>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <!-- <div class="<%= container unless @no_container %>" > -->
+    36:       <%= yield %>
+    37:     <!-- </div> -->
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140534449700'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:49:27 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 633ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007f95baecbec0>:0x00007f95bfb6fba0>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <!-- <div class="<%= container unless @no_container %>" > -->
+    36:       <%= yield %>
+    37:     <!-- </div> -->
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140571680060'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:50:23 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `container' for #<#<Class:0x00007f95baecbec0>:0x00007f95bfafe1f8>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <!-- <div class="<%= container  @no_container %>" > -->
+    36:       <%= yield %>
+    37:     <!-- </div> -->
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140571451320'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:50:25 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `container' for #<#<Class:0x00007f95baecbec0>:0x00007f95bb574a88>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <!-- <div class="<%= container  @no_container %>" > -->
+    36:       <%= yield %>
+    37:     <!-- </div> -->
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1910466598521391978_70140535025580'
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:50:35 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/steven/code/scorcious/fixit/public/packs
+Completed 200 OK in 3294ms (Views: 3293.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-07-30 18:50:51 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J31AZtsdb7VcJrCYZQdwHIHUxRN8VEedFzvMG4sPYgzbjJp7pcUM0hb4LtNNDa2nCvqtmULrKI7G1mqSbbPaXw==", "user"=>{"email"=>"shiwenly@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "shiwenly@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/bookings/3
+Completed 302 Found in 154ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/bookings/3" for ::1 at 2019-07-30 18:50:51 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 3.2ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 3, total_price: 305.0, start_date: "2019-08-20", end_date: "2019-08-25", location: "26707 Krajcik Fork, Lemkestad, MT 07140", time: "2000-01-01 09:23:53", user_id: 175, painting_id: 177, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/3" for ::1 at 2019-07-30 18:53:56 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.3ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 3, total_price: 305.0, start_date: "2019-08-20", end_date: "2019-08-25", location: "26707 Krajcik Fork, Lemkestad, MT 07140", time: "2000-01-01 09:23:53", user_id: 175, painting_id: 177, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/3" for ::1 at 2019-07-30 18:53:58 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 3, total_price: 305.0, start_date: "2019-08-20", end_date: "2019-08-25", location: "26707 Krajcik Fork, Lemkestad, MT 07140", time: "2000-01-01 09:23:53", user_id: 175, painting_id: 177, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/3" for ::1 at 2019-07-30 18:54:02 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 3, total_price: 305.0, start_date: "2019-08-20", end_date: "2019-08-25", location: "26707 Krajcik Fork, Lemkestad, MT 07140", time: "2000-01-01 09:23:53", user_id: 175, painting_id: 177, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/2" for ::1 at 2019-07-30 18:54:05 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/2" for ::1 at 2019-07-30 18:54:46 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.7ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.3ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/2" for ::1 at 2019-07-30 18:54:54 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started PUT "/__web_console/repl_sessions/620dbe52ec896a9564ed8ca82e942398" for ::1 at 2019-07-30 18:55:41 +0800
+Started PUT "/__web_console/repl_sessions/620dbe52ec896a9564ed8ca82e942398" for ::1 at 2019-07-30 18:55:42 +0800
+Started GET "/bookings/2" for ::1 at 2019-07-30 18:56:15 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  Rendered bookings/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 48ms (Views: 21.0ms | ActiveRecord: 5.7ms)
+
+
+  
+Pundit::AuthorizationNotPerformedError (BookingsController):
+  
+pundit (2.0.1) lib/pundit.rb:190:in `verify_authorized'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:236:in `block in halting_and_conditional'
+activesupport (5.2.3) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.3) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.3) lib/active_support/callbacks.rb:133:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (4.0.1) lib/puma/configuration.rb:228:in `call'
+puma (4.0.1) lib/puma/server.rb:657:in `handle_request'
+puma (4.0.1) lib/puma/server.rb:467:in `process_client'
+puma (4.0.1) lib/puma/server.rb:328:in `block in run'
+puma (4.0.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/bookings/2" for ::1 at 2019-07-30 18:58:53 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 7.1ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started PUT "/__web_console/repl_sessions/26de4cc366b00e8eebffcbecc64ada03" for ::1 at 2019-07-30 18:59:05 +0800
+Started PUT "/__web_console/repl_sessions/26de4cc366b00e8eebffcbecc64ada03" for ::1 at 2019-07-30 18:59:10 +0800
+Started PUT "/__web_console/repl_sessions/26de4cc366b00e8eebffcbecc64ada03" for ::1 at 2019-07-30 18:59:16 +0800
+Started GET "/bookings/2" for ::1 at 2019-07-30 19:00:57 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/2" for ::1 at 2019-07-30 19:02:02 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/2" for ::1 at 2019-07-30 19:02:05 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/2" for ::1 at 2019-07-30 19:02:06 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 2, total_price: 576.0, start_date: "2019-08-09", end_date: "2019-08-17", location: "9139 Bryan Extensions, West Valentina, MO 73388", time: "2000-01-01 09:23:53", user_id: 166, painting_id: 176, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/3" for ::1 at 2019-07-30 19:02:13 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.6ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to show? this #<Booking id: 3, total_price: 305.0, start_date: "2019-08-20", end_date: "2019-08-25", location: "26707 Krajcik Fork, Lemkestad, MT 07140", time: "2000-01-01 09:23:53", user_id: 175, painting_id: 177, created_at: "2019-07-30 09:23:53", updated_at: "2019-07-30 09:23:53">):
+  
+app/controllers/bookings_controller.rb:10:in `show'
+Started GET "/bookings/3" for ::1 at 2019-07-30 19:03:45 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  [1m[36mPainting Load (0.4ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  ↳ app/views/bookings/show.html.erb:5
+  Rendered bookings/show.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 1321ms (Views: 1286.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/bookings/3" for ::1 at 2019-07-30 19:04:36 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  [1m[36mPainting Load (2.3ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  ↳ app/views/bookings/show.html.erb:5
+  Rendered bookings/show.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 66ms (Views: 29.2ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/bookings/3" for ::1 at 2019-07-30 19:04:37 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  [1m[36mPainting Load (0.4ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  ↳ app/views/bookings/show.html.erb:5
+  Rendered bookings/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bookings/3" for ::1 at 2019-07-30 19:04:37 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  [1m[36mPainting Load (0.4ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  ↳ app/views/bookings/show.html.erb:5
+  Rendered bookings/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bookings/3" for ::1 at 2019-07-30 19:04:38 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  [1m[36mPainting Load (0.5ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  ↳ app/views/bookings/show.html.erb:5
+  Rendered bookings/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 62ms (Views: 26.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bookings/2" for ::1 at 2019-07-30 19:04:41 +0800
+Processing by BookingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  ↳ /Users/steven/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT  "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookings_controller.rb:9
+  Rendering bookings/show.html.erb within layouts/application
+  [1m[36mPainting Load (0.5ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = $1 LIMIT $2[0m  [["id", 176], ["LIMIT", 1]]
+  ↳ app/views/bookings/show.html.erb:5
+  Rendered bookings/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 1.0ms)
+
+

@@ -1,13 +1,14 @@
 class BookingPolicy < ApplicationPolicy
+
+  def show?
+    true
+  end
+
+
   class Scope < Scope
     def resolve
       scope.all
     end
-
-    def show?
-      true
-    end
-
-
   end
+
 end

@@ -1,3 +1,5 @@
+<% if policy(@booking).show? %>
+
 <h2>Your Booking</h2>
 
 <h5><%= @booking.painting.title %></h5>
@@ -6,3 +8,4 @@
 <p><%= @booking.location %></p>
 <p><%= @booking.time %></p>
 
+<% end %>
