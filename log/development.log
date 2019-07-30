@@ -1288,3 +1288,391 @@ FOREIGN KEY ("painting_id")
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-07-30 18:46:45 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/richard/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (4.0.1) lib/puma/configuration.rb:228:in `call'
+puma (4.0.1) lib/puma/server.rb:657:in `handle_request'
+puma (4.0.1) lib/puma/server.rb:467:in `process_client'
+puma (4.0.1) lib/puma/server.rb:328:in `block in run'
+puma (4.0.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4880485466833276965)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePaintings (20190730040847)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (173.5ms)[0m  [1m[35mCREATE TABLE "paintings" ("id" bigserial primary key, "title" text, "description" text, "category" text, "price" integer, "photo" character varying, "location" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_20c0dc9a7e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190730040847_create_paintings.rb:3
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE  INDEX  "index_paintings_on_user_id" ON "paintings"  ("user_id")[0m
+  ↳ db/migrate/20190730040847_create_paintings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190730040847"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBookings (20190730050830)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "total_price" float, "start_date" date, "end_date" date, "location" character varying, "user_id" bigint, "painting_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_bc77b04990"
+FOREIGN KEY ("painting_id")
+  REFERENCES "paintings" ("id")
+)[0m
+  ↳ db/migrate/20190730050830_create_bookings.rb:3
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings"  ("user_id")[0m
+  ↳ db/migrate/20190730050830_create_bookings.rb:3
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_painting_id" ON "bookings"  ("painting_id")[0m
+  ↳ db/migrate/20190730050830_create_bookings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190730050830"]]
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateReviews (20190730074859)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "date" date, "content" text, "title" character varying, "rating" integer, "painting_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4c4a48d372"
+FOREIGN KEY ("painting_id")
+  REFERENCES "paintings" ("id")
+)[0m
+  ↳ db/migrate/20190730074859_create_reviews.rb:3
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_painting_id" ON "reviews"  ("painting_id")[0m
+  ↳ db/migrate/20190730074859_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190730074859"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4880485466833276965)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-07-30 18:47:26 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/richard/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+[Webpacker] Compiling…
+Started GET "/" for ::1 at 2019-07-30 18:47:29 +0800
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+[Webpacker] Compiling…
+Started GET "/" for ::1 at 2019-07-30 18:47:29 +0800
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+[Webpacker] Compiling…
+Started GET "/" for ::1 at 2019-07-30 18:47:29 +0800
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+[Webpacker] Compiling…
+Started GET "/" for ::1 at 2019-07-30 18:47:30 +0800
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/richard/code/scorcious/project/fixit/public/packs
+Completed 200 OK in 3888ms (Views: 3886.1ms | ActiveRecord: 0.0ms)
+
+
+[Webpacker] Compiled all packs in /home/richard/code/scorcious/project/fixit/public/packs
+Completed 200 OK in 3682ms (Views: 3681.8ms | ActiveRecord: 0.0ms)
+
+
+[Webpacker] Compiled all packs in /home/richard/code/scorcious/project/fixit/public/packs
+Completed 200 OK in 3937ms (Views: 3936.5ms | ActiveRecord: 0.0ms)
+
+
+[Webpacker] Compiled all packs in /home/richard/code/scorcious/project/fixit/public/packs
+Completed 200 OK in 7406ms (Views: 7393.6ms | ActiveRecord: 0.0ms)
+
+
+[Webpacker] Compiled all packs in /home/richard/code/scorcious/project/fixit/public/packs
+Completed 200 OK in 3696ms (Views: 3693.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:47:57 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (485.8ms)
+Completed 500 Internal Server Error in 1211ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59e706fc8>:0x00007fc59e705330>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container unless @no_container %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__2637520943787067427_70243371743040'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:48:16 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 1246ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59da88b20>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container unless @no_container %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__2637520943787067427_70243365197340'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:48:21 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 647ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59e377100>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container unless @no_container %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__2637520943787067427_70243369837640'
+Started PUT "/__web_console/repl_sessions/bae3c325f2eacc2d28ab6d93ca397d2e" for ::1 at 2019-07-30 18:48:35 +0800
+Started PUT "/__web_console/repl_sessions/bae3c325f2eacc2d28ab6d93ca397d2e" for ::1 at 2019-07-30 18:48:39 +0800
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:49:18 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 574ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59d72f320>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container if @no_container.nil? %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__2637520943787067427_70243363801140'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:50:38 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 579ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59da7dfe0>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container unless @no_container %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__2637520943787067427_70243365215500'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:50:53 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:51:13 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:51:14 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:51:15 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:51:15 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:51:18 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59d4737f8>
+Did you mean?  content_for):
+    32:     </div>
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <div class="<%= container if @no_container == nil %>" >
+    36:       <%= yield %>
+    37:     </div>
+    38: 
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__2637520943787067427_70243362031480'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:51:51 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 600ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59d5f8e70>
+Did you mean?  content_for):
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <% @no_container = false if @no_container == nil %>
+    36:     <div class="<%= container if @no_container == false %>" >
+    37:       <%= yield %>
+    38:     </div>
+    39: 
+  
+app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb__2637520943787067427_70243362846080'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:52:06 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 545ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `container' for #<#<Class:0x00007fc59da8a538>:0x00007fc59d9906a0>
+Did you mean?  content_for):
+    33: 
+    34:     <!-- CONTAINER -->
+    35:     <% no_container = false if @no_container == nil %>
+    36:     <div class="<%= container if no_container == false %>" >
+    37:       <%= yield %>
+    38:     </div>
+    39: 
+  
+app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb__2637520943787067427_70243363721860'
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:52:18 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-07-30 18:53:49 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-30 18:53:52 +0800
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-07-30 18:54:04 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
