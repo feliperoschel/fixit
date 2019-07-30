@@ -32,8 +32,12 @@
     </div>
 
     <!-- CONTAINER -->
-    <div class="<%= container unless @no_container %>" >
+    <% if @no_container %>
+      <div>
+    <% else %> 
+      <div class="container">
       <%= yield %>
+    <% end %>
     </div>
 
     <!-- JAVASCRIPT -->
