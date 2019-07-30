@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
+  get 'reviews/new'
   devise_for :users
   resources :paintings do
     resources :reviews, only: [:new, :create]
