@@ -31,3 +31,4 @@ end
 # Devise - authentication gem for Rails
 gem 'devise'
 gem 'pundit'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
