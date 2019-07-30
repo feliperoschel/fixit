@@ -30,3 +30,4 @@ end
 
 # Devise - authentication gem for Rails
 gem 'devise'
+gem 'pundit'
