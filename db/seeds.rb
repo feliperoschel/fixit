@@ -8,10 +8,12 @@
 
 require 'faker'
 
-User.delete_all if Rails.env.development?
-Painting.delete_all if Rails.env.development?
-User.delete_all if Rails.env.development?
+
 Review.delete_all if Rails.env.development?
+Painting.delete_all if Rails.env.development?
+Booking.delete_all if Rails.env.development?
+User.delete_all if Rails.env.development?
+
 
 
 20.times do
@@ -36,15 +38,19 @@ User.all.each do |user|
   painting.save
 end
 
+
+
 20.times do
   user = User.all.sample
+  start_date = Faker::Date.forward(23)
+  end_date = start_date + rand(1..10)
   painting = Painting.all.sample
-  booking = Booking.new(
-    start_date: Faker::Date.forward(23),
-    end_date: :start_date + rand(1..10),
-    total_price: (:end_date - :start_date) * painting.price,
+  booking = Booking.create!(
+    start_date: start_date,
+    end_date: end_date,
+    total_price: (end_date - start_date) * painting.price,
     location: Faker::Address.full_address,
-    time: rand(9..18),
+    time: Time.now,
     user: user,
     painting: painting
     )
@@ -52,13 +58,14 @@ end
 
 Painting.all.each do |painting|
   rand(3..5).times do
-    Review.new(
+   review = Review.new(
       painting: painting,
       date: Faker::Date.forward(23),
       title: Faker::Lorem.sentence,
       content: Faker::Lorem.sentences,
       rating: rand(0..5)
     )
+   review.save
   end
 end
 
