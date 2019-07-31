@@ -62,7 +62,6 @@
 
 // What you might list-style: ;ke
 .card-trip {
-  overflow: hidden;
   background: white;
   border: solid 1px #EFF9F0;
   height: 320px;
@@ -88,23 +87,32 @@
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
+    .card-trip-user {
+      position: absolute;
+      right: 16px;
+      top: -20px;
+      width: 40px;
+    }
   }
-
 }
 
+.container {
+  h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .row {
+    margin: 0 auto;
+    div {
 
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+    }
+  }
+  .bottom {
+    margin: 10vh 0;
+  }
+  .top {
+    margin-bottom: 10vh;
+    margin-top: 103vh;
+  }
 }
-
-h2 {
-  text-align: center;
-  margin-top: 70px;
-}
-
-
-
