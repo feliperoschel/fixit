@@ -1,4 +1,8 @@
 <p>index.html.erb</p>
-<% @paintings.each do |painting| %>
-  <p><%= link_to painting.title, painting %></p>
-<% end %>
+
+  <% @paintings.each do |painting| %>
+
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url painting.photo%>')">
+      <p><%= link_to painting.title, painting %></p>
+    </div>
+  <% end %>
