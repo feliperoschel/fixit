@@ -26,5 +26,21 @@
     .forget-password {
         text-align: right;
         flex-grow: 1;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .btn-log-in {
+        background-color: $green;
+        border-radius: 4px;
+        opacity: 1;
+    }
+    .btn-sign-up {
+        font-weight: bold;
+        margin-left: 1vw;
+        color: $green;
+        border: solid 2px $green;
+        border-radius: 4px;
+        opacity: 1;
     }
 }
