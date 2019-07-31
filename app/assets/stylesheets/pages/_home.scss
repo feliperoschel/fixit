@@ -17,4 +17,94 @@
             color: $green;
         }
     }
+    form {
+      font-family: $logo-font;
+      font-weight: bold;
+      margin: 6vh auto;
+      width: 70vw;
+      * {
+        --height: 50px;
+        margin: 0;
+        letter-spacing: 1px;
+        text-align: center;
+        height: var(--height);
+        border: none;
+        border-radius: var(--height);
+        font-size: 24px;
+      }
+    }
 }
+
+
+// Recommended
+.card-category {
+  margin-top: 20px;
+  background-size: cover;
+  background-position: center;
+  height: 160px;
+  width: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  h2.title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+}
+
+// What you might list-style: ;ke
+.card-trip {
+  overflow: hidden;
+  background: white;
+  border: solid 1px #EFF9F0;
+  height: 320px;
+  width: 270px;
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  .card-trip-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+
+}
+
+
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 70px;
+}
+
+
+
