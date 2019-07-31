@@ -1,32 +1,25 @@
 <h2 class="text-center">Log in</h2>
-
 <div class="row">
   <div class="col-12 col-lg-6">
     <!-- PICTURE -->
     <%= image_tag ( "login.jpeg" ) %>
   </div>
-
   <div class="col-12 col-lg-6">
     <!-- FORM -->
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.input :email,
+      <%= f.input :email,
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
+      <%= f.input :password,
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean, class: "form-check" if devise_mapping.rememberable? %>
-        
-        <div class="buttons">
-          <%= f.button :submit, "Log in", class: "btn-log-in" %>
-          <%= link_to "Sign up", new_registration_path(resource_name), class: "btn-sign-up" %>
-          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forget-password" %>
-        </div>
+      <%= f.input :remember_me, as: :boolean, class: "form-check" if devise_mapping.rememberable? %>
+      <div class="buttons">
+        <%= f.button :submit, "Log in", class: "btn-log-in" %>
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "btn-sign-up" %>
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forget-password" %>
+      </div>
     <% end %>
-    
   </div>
-
 </div>
-
-
