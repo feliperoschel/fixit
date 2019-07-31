@@ -33,12 +33,15 @@
     }
     .btn-log-in {
         background-color: $green;
+        width: 120px;
         border-radius: 4px;
         opacity: 1;
     }
     .btn-sign-up {
         font-weight: bold;
-        margin-left: 1vw;
+        margin-left: 2vw;
+        width: 120px;
+        text-align: center;
         color: $green;
         border: solid 2px $green;
         border-radius: 4px;
