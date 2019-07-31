@@ -24,7 +24,7 @@
         <!-- IF USER IS LOGGED IN -->
         <div class="options">
           <!-- FIXME: logout and host a service-->
-          <a class="host-service">Host a service</a>
+          <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
           <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
           <!-- TODO: CREATE AVATAR -->
         </div>
