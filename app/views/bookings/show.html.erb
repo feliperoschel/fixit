@@ -1,4 +1,5 @@
 <% if policy(@booking).show? %>
+<<<<<<< HEAD
 
 <h2>Your Booking</h2>
 
@@ -9,3 +10,11 @@
 <p><%= @booking.painting.price %> rmb</p>
 
 <% end %>
+=======
+  <h2>Your Booking</h2>
+  <h5><%= @booking.painting.title %></h5>
+  <p><%= @booking.start_date %></p>
+  <p><%= @booking.end_date %></p>
+  <p><%= @booking.location %></p>
+<% end %>
+>>>>>>> master

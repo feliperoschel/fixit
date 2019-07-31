@@ -4,4 +4,6 @@
 <p><%= @painting.price %></p>
 <p><%= @painting.category %></p>
 <p><%= @painting.location %></p>
-<%= link_to "Book", new_painting_booking_path(@painting) %>
+<p><%= link_to "Book", new_painting_booking_path(@painting) %></p>
+<p><%= link_to "Edit", edit_painting_path(@painting) %></p>
+<p><%= link_to "Delete", painting_path(@painting), method: :delete %></p>
