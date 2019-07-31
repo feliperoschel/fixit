@@ -4,4 +4,5 @@ class Painting < ApplicationRecord
   validates :category, :price, presence: true
   belongs_to :user
   has_many :reviews
+  has_many :bookings
 end

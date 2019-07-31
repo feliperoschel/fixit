@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @booking = Booking.all
-
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @paintings = current_user.paintings
   end
 
   def show
@@ -23,11 +23,12 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @painting = Painting.find(params[:painting_id])
     @booking.painting = @painting
+    # @total_price = params[:end_date] - params[:start_date] * params[:paintings.price]
     authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      raise
+      render :new
     end
   end
 

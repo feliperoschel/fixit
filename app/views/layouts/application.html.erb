@@ -17,6 +17,8 @@
         <!-- TODO: SEARCH BAR -->
       </div>
 
+      <%= signed_in? ? 'logged in' : 'logged out' %>
+
       <% if false %>
         <!-- IF USER IS LOGGED IN -->
         <a class="host-service">Host a service</a>
@@ -34,10 +36,10 @@
     <!-- CONTAINER -->
     <% if @no_container %>
       <div>
-    <% else %> 
+    <% else %>
       <div class="container">
     <% end %>
-    
+
     <%= yield %>
     </div>
 
