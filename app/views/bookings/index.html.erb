@@ -2,6 +2,22 @@
 
 <% @bookings.each do |booking| %>
 
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+
+      <h5>Painting name : <%= booking.painting.title %></h5>
+      <p>From : <%= booking.start_date %></p>
+      <p>To : <%= booking.end_date %></p>
+      <p>Address : <%= booking.location %></p>
+      <p>Price : <%= booking.painting.price %> rmb</p>
+
+      <%= link_to "edit", edit_booking_path(booking)  %>
+
+    </div>
+  </div>
+
+
     <h5>Painting name : <%= booking.painting.title %></h5>
     <p>From : <%= booking.start_date %></p>
     <p>To : <%= booking.end_date %></p>
@@ -25,4 +41,5 @@
       <p>Address : <%= booking.location %></p>
   <% end %>
   <p>Price : <%= painting.price %> rmb</p>
+
 <% end %>
