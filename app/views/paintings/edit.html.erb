@@ -1,0 +1,12 @@
+<p>Paintings#edit - views/paintings/edit.hmlt.erb</p>
+<% if policy(@painting).update? %>
+  <h1>Painting</h1>
+  <%= simple_form_for [@painting] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :location %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+<% end %>

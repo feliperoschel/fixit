@@ -11,11 +11,12 @@ class PaintingsController < ApplicationController
   end
 
   def new
-    @painting = Painting.new
+    authorize @painting = Painting.new
   end
 
   def create
-    @painting = Painting.new(painting_params)
+    authorize @painting = Painting.new(painting_params)
+    @painting.user = current_user
     if @painting.save
       redirect_to @painting
     else
@@ -23,31 +24,36 @@ class PaintingsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @painting
+  end
 
   def update
+    authorize @painting
     if @painting.update(painting_params)
       render :show
     else
-      render_error
+      render :edit
     end
   end
 
   def destroy
-    @painting.destroy!
+    authorize @painting
+    if @painting.bookings.empty?
+      @painting.destroy
+      redirect_to paintings_path
+    else
+      render :show, notice: 'Your painting has bookings'
+    end
   end
 
   private
 
   def painting_params
-    params.require(:painting).permit(:date, :content, :title, :rating)
+    params.require(:painting).permit(:title, :description, :price, :category, :location)
   end
 
   def set_painting
     @painting = Painting.find(params[:id])
-  end
-
-  def render_error
-    render json: { errors: @painting.errors.full_messages }
   end
 end
