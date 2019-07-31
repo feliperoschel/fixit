@@ -8,6 +8,15 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    update?
+  end
+
+  def update?
+    record.user == user
+  end
+
+
   class Scope < Scope
     def resolve
       scope.where(user: user)

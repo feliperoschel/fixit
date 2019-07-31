@@ -8,6 +8,8 @@
     <p>Address : <%= booking.location %></p>
     <p>Price : <%= booking.painting.price %> rmb</p>
 
+    <%= link_to "edit", edit_booking_path(booking)  %>
+
 <% end %>
 
 
