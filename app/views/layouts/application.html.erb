@@ -25,14 +25,15 @@
         <div class="options">
           <!-- FIXME: logout and host a service-->
           <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
+          <%= link_to  "Your Bookings", bookings_path %>
           <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
           <!-- TODO: CREATE AVATAR -->
         </div>
       <% else %>
         <!-- USER IS NOT LOGGED In -->
         <div class="options">
-          <%= link_to  "Login", new_user_session_path %>
           <!-- FIXME: erb tag link_to -->
+          <%= link_to  "Login", new_user_session_path %>
           <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
         </div>
       <% end %>
