@@ -35,30 +35,58 @@
     }
 }
 
-
-// Recommended
-.card-category {
-  margin-top: 20px;
-  background-size: cover;
-  background-position: center;
-  height: 160px;
-  width: 270px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  h2.title {
-    font-weight: bold;
-    letter-spacing: 1px;
+.container {
+  h2 {
+    text-align: center;
     margin: 0;
     padding: 0;
-    color: #fff;
+  }
+  .bottom {
+    margin: 10vh 0;
+  }
+  .top {
+    margin-bottom: 10vh;
+    margin-top: calc(92vh + 10vh);
+  }
+  .row {
+    .recommended {
+      position: relative;
+      img {
+        position: absolute;
+        object-fit: fill;
+        height: 20vh;
+      }
+      h2 {
+        position: absolute;
+      }
+    }
   }
 }
+
+
+// // Recommended
+// .card-category {
+//   margin-top: 20px;
+//   background-size: cover;
+//   background-position: center;
+//   height: 160px;
+//   width: 270px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border-radius: 4px;
+//   h2.title {
+//     font-weight: bold;
+//     letter-spacing: 1px;
+//     margin: 0;
+//     padding: 0;
+//     color: #fff;
+//   }
+// }
 
 // What you might list-style: ;ke
 .card-trip {
@@ -93,20 +121,5 @@
       top: -20px;
       width: 40px;
     }
-  }
-}
-
-.container {
-  h2 {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  .bottom {
-    margin: 10vh 0;
-  }
-  .top {
-    margin-bottom: 10vh;
-    margin-top: 103vh;
   }
 }
