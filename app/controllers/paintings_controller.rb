@@ -4,6 +4,11 @@ class PaintingsController < ApplicationController
 
   def index
     @paintings = policy_scope(Painting).order(created_at: :desc)
+    @search = params["search"]
+    if @search.present? && @search["title"] != ""
+        @title = @search["title"]
+        @paintings = Painting.where("title ILIKE ?", "%#{@title}%")
+    end
   end
 
   def show

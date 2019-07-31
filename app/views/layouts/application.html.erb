@@ -13,25 +13,28 @@
     <!-- NAVBAR -->
     <div class="navbar">
       <a href="/"><h4 class="logo">HomeGallery</h4></a>
+      <!-- SEARCH BAR -->
       <div class="search-bar">
-        <!-- TODO: SEARCH BAR -->
         <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-          <%= f.input :name, label: false, placeholder: "Search...", input_html: {value: ""} %>
+          <%= f.input :title, label: false, placeholder: "Search...", input_html: {value: ""} %>
         <% end %>
       </div>
 
-      <%= signed_in? ? 'logged in' : 'logged out' %>
-
-      <% if false %>
+      <% if current_user %>
         <!-- IF USER IS LOGGED IN -->
-        <a class="host-service">Host a service</a>
-        <!-- TODO: CREATE AVATAR -->
+        <div class="options">
+          <!-- FIXME: logout and host a service-->
+          <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
+          <%= link_to  "Your Bookings", bookings_path %>
+          <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
+          <!-- TODO: CREATE AVATAR -->
+        </div>
       <% else %>
         <!-- USER IS NOT LOGGED In -->
-        <!-- FIXME: erb tag link_to -->
         <div class="options">
-          <a href="#">Login</a>
-          <a class="host-service" href="#">Host a service</a>
+          <!-- FIXME: erb tag link_to -->
+          <%= link_to  "Login", new_user_session_path %>
+          <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
         </div>
       <% end %>
     </div>
