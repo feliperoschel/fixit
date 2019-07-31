@@ -1,11 +1,14 @@
 class PaintingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_painting, only: [:show, :edit, :update, :destroy]
 
   def index
-    @paintings = Painting.all
+    @paintings = policy_scope(Painting).order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    authorize @painting
+  end
 
   def new
     @painting = Painting.new

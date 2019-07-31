@@ -1,1 +1,4 @@
 <p>index.html.erb</p>
+<% @paintings.each do |painting| %>
+  <p><%= link_to painting.title, painting %></p>
+<% end %>
