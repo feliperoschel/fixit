@@ -17,6 +17,22 @@
             color: $green;
         }
     }
+    form {
+      font-family: $logo-font;
+      font-weight: bold;
+      margin: 6vh auto;
+      width: 70vw;
+      * {
+        --height: 50px;
+        margin: 0;
+        letter-spacing: 1px;
+        text-align: center;
+        height: var(--height);
+        border: none;
+        border-radius: var(--height);
+        font-size: 24px;
+      }
+    }
 }
 
 
@@ -35,15 +51,19 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  h2.title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
 }
 
 // What you might list-style: ;ke
 .card-trip {
   overflow: hidden;
   background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // border-color: #92a8d1;
   border: solid 1px #EFF9F0;
   height: 320px;
   width: 270px;
