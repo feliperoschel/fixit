@@ -1,6 +1,6 @@
-<% if policy(@booking).create? %>
+<% if policy(@booking).update? %>
   <h1>Booking</h1>
-  <%= simple_form_for [@painting, @booking] do |f| %>
+  <%= simple_form_for @booking do |f| %>
     <%= f.input :start_date%>
     <%= f.input :end_date %>
     <%= f.input :location %>
