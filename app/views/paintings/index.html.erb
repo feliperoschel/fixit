@@ -1,8 +1,10 @@
-<p>index.html.erb</p>
+<!-- <p>index.html.erb</p> -->
 
-  <% @paintings.each do |painting| %>
+<div class="container">
+  <h1 class="title-index-painting" style="text-align: center">Select from our beautiful collection</h1>
+  <div class="row d-flex justify-content-center">
 
-    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url painting.photo%>')">
-      <p><%= link_to painting.title, painting %></p>
-    </div>
-  <% end %>
+  <%= render "shared/card_index_paintings" %>
+
+  </div>
+</div>
