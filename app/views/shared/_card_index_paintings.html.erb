@@ -1,6 +1,6 @@
 <% @paintings.each do |painting| %>
   <div class="card-index-painting" style="width: 18rem;">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1530728606679-db4cf2cc479b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1420&q=80" alt="Card image cap">
+    <img class="card-img-top" src="<%= image_url painting.photo%>" alt="Card image cap">
     <div class="card-body">
       <div class="d-flex justify-content-between">
         <h5 class="card-title"><%= painting.title %></h5>
