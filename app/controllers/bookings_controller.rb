@@ -33,13 +33,15 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @user = current_user
     @booking = Booking.find(params[:id])
+    # @painting = Painting.find(params[:painting_id])
+    authorize @booking
   end
 
   def update
     @user = current_user
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
   end
