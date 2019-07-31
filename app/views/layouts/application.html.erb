@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>HomeGallery</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -15,6 +15,9 @@
       <a href="/"><h4 class="logo">HomeGallery</h4></a>
       <div class="search-bar">
         <!-- TODO: SEARCH BAR -->
+        <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+          <%= f.input :name, label: false, placeholder: "Search...", input_html: {value: ""} %>
+        <% end %>
       </div>
 
       <% if false %>
