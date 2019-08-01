@@ -1,9 +1,26 @@
-<% if policy(@booking).show? %>
+<div class="bookings-show">
   <h2>Your Booking</h2>
-  <h5><%= @booking.painting.title %></h5>
-  <p>From <%= @booking.start_date %></p>
-  <p>To <%= @booking.end_date %></p>
-  <p><%= @booking.location %></p>
-  <p><%= @booking.painting.price %> rmb</p>
-  <%= link_to "see all bookings", bookings_path %>
-<% end %>
+  <% if policy(@booking).show? %>
+
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <%= cl_image_tag @booking.painting.photo %>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="price-title-info">
+        <div class="title">
+          <h3><%= @booking.painting.title %></h3>
+          <p class="address"><%= @booking.location %></p>
+        </div>
+        <p>RMB: <%= @booking.painting.price %></p>
+      </div>
+      <!-- BOOKING -->
+      <p><strong>Booking:</strong> &nbsp;<%= @booking.start_date %> to <%= @booking.end_date %></p>
+      
+      <!-- EDIT BOOKING -->
+      <%= link_to "Edit Booking", edit_booking_path %>
+    </div>
+  </div>
+
+  <% end %>
+</div>
