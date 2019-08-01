@@ -14,11 +14,13 @@
     <div class="navbar">
       <a href="/"><h4 class="logo">HomeGallery</h4></a>
       <!-- SEARCH BAR -->
-      <div class="search-bar">
-        <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-          <%= f.input :title, label: false, placeholder: "Search...", input_html: {value: ""} %>
-        <% end %>
-      </div>
+      <% unless @no_search_bar %>
+        <div class="search-bar">
+          <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+            <%= f.input :title, label: false, placeholder: "Search...", input_html: {value: ""} %>
+          <% end %>
+        </div>
+      <% end %>
 
       <% if current_user %>
         <!-- IF USER IS LOGGED IN -->

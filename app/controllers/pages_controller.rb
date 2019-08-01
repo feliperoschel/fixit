@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @no_container = true
+    @no_search_bar = true
+    @paintings = Painting.all.sample(3)
   end
 end

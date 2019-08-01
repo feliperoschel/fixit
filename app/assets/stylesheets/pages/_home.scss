@@ -1,38 +1,50 @@
 // Specific CSS for your home-page
 
 .background {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url("https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80") no-repeat center center;
-    background-size: cover;
-    div {
-        margin-top: 30vh;
-        h1 {
-            font-size: 44px;
-            font-weight: bold;
-        }
-        .mesg-top {
-            color: $green;
-        }
-    }
-    form {
-      font-family: $logo-font;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80") no-repeat center center;
+  background-size: cover;
+  div {
+    margin-top: 30vh;
+    h1 {
+      font-size: 44px;
       font-weight: bold;
-      margin: 6vh auto;
-      width: 70vw;
-      * {
-        --height: 50px;
-        margin: 0;
-        letter-spacing: 1px;
-        text-align: center;
-        height: var(--height);
-        border: none;
-        border-radius: var(--height);
-        font-size: 24px;
-      }
     }
+    .mesg-top {
+      color: $green;
+    }
+  }
+  form {
+    font-family: $logo-font;
+    font-weight: bold;
+    margin: 6vh auto;
+    margin-bottom: 16px;
+    width: 70vw;
+    * {
+      --height: 50px;
+      margin: 0;
+      letter-spacing: 1px;
+      text-align: center;
+      height: var(--height);
+      border: none;
+      border-radius: var(--height);
+      font-size: 24px;
+    }
+  }
+  .browse {
+    font-size: 18px;
+    font-family: $logo-font;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: ease 0.1s;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
 }
 
 .container {
@@ -50,14 +62,52 @@
   }
   .row {
     .recommended {
-      position: relative;
+      padding: 0;
+      margin: 1vh 0;
+      --height: 18vh;
+      height: var(--height);
+      width: 90%;
+      display: flex;
+      justify-content: center;
       img {
+        filter: blur(1px);
         position: absolute;
-        object-fit: fill;
-        height: 20vh;
+        width: 94%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 4px;
       }
       h2 {
         position: absolute;
+        width: 94%;
+        height: 100%;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255, 0.3));
+        padding-top: 7vh;
+      }
+    }
+  }
+  .paintings {
+    margin: 0;
+    margin-bottom: 10vh;
+    div {
+      img {
+        height: 34vh;
+        border-radius: 4px;
+      }
+      div {
+        * {
+          font-size: 24px;
+          margin: 8px 0;
+          margin-bottom: 0px;
+        }
+        p {
+          font-size: 16px;
+          margin: 0;
+        }
       }
     }
   }
@@ -89,37 +139,37 @@
 // }
 
 // What you might list-style: ;ke
-.card-trip {
-  background: white;
-  border: solid 1px #EFF9F0;
-  height: 320px;
-  width: 270px;
-  img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-  h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
-  .card-trip-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-    .card-trip-user {
-      position: absolute;
-      right: 16px;
-      top: -20px;
-      width: 40px;
-    }
-  }
-}
+// .card-trip {
+//   background: white;
+//   border: solid 1px #EFF9F0;
+//   height: 320px;
+//   width: 270px;
+//   img {
+//     height: 200px;
+//     width: 100%;
+//     object-fit: cover;
+//   }
+//   h2 {
+//     font-size: 16px;
+//     font-weight: bold;
+//     margin: 0;
+//   }
+//   p {
+//     font-size: 12px;
+//     opacity: .7;
+//     margin: 0;
+//   }
+//   .card-trip-infos {
+//     padding: 16px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-end;
+//     position: relative;
+//     .card-trip-user {
+//       position: absolute;
+//       right: 16px;
+//       top: -20px;
+//       width: 40px;
+//     }
+//   }
+// }
