@@ -1,97 +1,65 @@
 <div class="background text-center mx-auto">
     <div>
-        <h1 class="mesg-top">Find Paintings</h1>
-        <h1>around you</h1>
-      </div>
+      <h1 class="mesg-top">Find Paintings</h1>
+      <h1>around you</h1>
+    </div>
     <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: '' } do |f| %>
-      <%= f.input :title, label: false, placeholder: "Eg. 'Minimal', 'Abstract'", input_html: {value: ""} %>
+    <%= f.input :title, label: false, placeholder: "Try: 'monalisa'", input_html: {value: ""} %>
     <% end %>
+    <a class="browse">or browse all paintings</a>
 </div>
 
 <div class="container">
-
   <!-- RECOMMENDATIONS   -->
   <h2 class="top">Recommended for you</h2>
   <div class="row">
-    <div class="col-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1562576650-27130b06c0ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80)">
-      <h2 class="title">Realism</h2>
-      </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1533213443190-1d96641c17ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+      <h2>Abstract</h2>
     </div>
-
-    <div class="col-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1555580168-9fb9646a8a1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)">
-      Painterly
-      </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1549985113-b697753f5bfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
+      <h2>Painterly</h2>
     </div>
-
-    <div class="col-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1523032217284-d9e49d6c5f04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80)">
-      Photorealism
-      </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1556005693-00fff02f134c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
+      <h2>Photorealism</h2>
     </div>
-
-    <div class="col-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1520697100691-c4fbfb42e1d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
-      Grafity
-      </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1473798486505-a5279da7afa2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1282&q=80" alt="">
+      <h2>Graffiti</h2>
+    </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1563724221518-9214b4d7a8f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+      <h2>Realism</h2>
+    </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1554757388-29a2a86ef02f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+      <h2>Minimal</h2>
+    </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1468796835058-f43f737a4941?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
+      <h2>Modernism</h2>
+    </div>
+    <div class="recommended col-sm-12 col-md-6 col-lg-3">
+      <img src="https://images.unsplash.com/photo-1505562130589-9879683e72da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+      <h2>See all</h2>
     </div>
   </div>
 
   <!-- WHAT YOU MIGHT LIKE -->
   <h2 class="bottom">See what you might like</h2>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-3">
-      <div class="card-trip" style="margin-top: 5vh">
-      <img src="https://images.unsplash.com/photo-1518945756765-f8641d60fc0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=994&q=80" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title</h2>
-            <!-- <p>description</p> -->
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
+  <div class="row paintings">
+    <% @paintings.each do |p| %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="<%= image_url (p.photo) %>" />
+        <div>
+          <h4><%= p.title %></h4>
+          <p>£<%= p.price %></p>
         </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-3">
-      <div class="card-trip" style="margin-top: 5vh">
-      <img src="https://images.unsplash.com/photo-1515164132472-9c1ff52ee81c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title</h2>
-            <p>description</p>
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-3">
-      <div class="card-trip" style="margin-top: 5vh">
-      <img src="https://images.unsplash.com/photo-1501366062246-723b4d3e4eb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1546&q=80" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title</h2>
-            <p>description</p>
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-3">
-      <div class="card-trip" style="margin-top: 5vh">
-      <img src="https://images.unsplash.com/photo-1530728606679-db4cf2cc479b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1420&q=80" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title</h2>
-            <p>description</p>
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      </div>
-    </div>
-
+    <% end %>
   </div>
-
 </div>
 
 
