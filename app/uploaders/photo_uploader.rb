@@ -14,4 +14,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
       width: 150, height: 150, crop: :thumb, gravity: :face
   end
 
+  def default_url
+    ActionController::Base.helpers.asset_path("login.jpg")
+  end
+
 end
