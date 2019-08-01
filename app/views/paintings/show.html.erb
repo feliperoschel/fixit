@@ -1,27 +1,39 @@
-<h2>Your painting</h2>
-<%= cl_image_tag @painting.photo, height: 300, width: 400, crop: :fill %>
-
-<p>Title : <%= @painting.title %></p>
-<p>Description : %= @painting.description %></p>
-<p>Price : <%= @painting.price %></p>
-<p>Category : <%= @painting.category %></p>
-<p>Address : <%= @painting.location %></p>
-
-<% if (@painting.user != current_user) %>
-  <%= link_to "Book", new_painting_booking_path(@painting) %>
-<% end %>
-
-<% if policy(@painting).edit? %>
-  <%= link_to "Edit", edit_painting_path(@painting) %>
-<% end %>
-
-<% if policy(@painting).destroy? %>
-  <%= link_to "Delete", painting_path(@painting), method: :delete %>
-<% end %>
-
-<% unless @reviews.nil? %>
-  <h5>Reviews</h5>
-  <% @reviews.each do |review| %>
-    <p><%= review.content %></p>
+<div class="paintings-show">
+  <h1>Paintings</h1>
+  
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= @painting.title %></h2>
+      <p><%= @painting.description %></p>
+      <p>$<%= @painting.price %></p>
+      <p><%= @painting.category %></p>
+      <p><%= @painting.location %></p>
+    </div>
+  </div>
+  
+  <% if (@painting.user != current_user) %>
+    <div class="btn btn-success">
+        <%= link_to "Book", new_painting_booking_path(@painting) %>
+    </div>
   <% end %>
-<% end %>
+
+  <% if policy(@painting).edit? %>
+    <div class="btn btn-primary">
+      <%= link_to "Edit", edit_painting_path(@painting) %>
+    </div>
+  <% end %>
+  
+  <% if policy(@painting).destroy? %>
+    <div class="btn btn-outline-primary">
+      <%= link_to "Delete", painting_path(@painting), method: :delete %>
+    </div>
+  <% end %>
+
+  <% unless @reviews.nil? %>
+    <h5>Reviews</h5>
+    <% @reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
+  <% end %>
+</div>
