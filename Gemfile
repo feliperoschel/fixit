@@ -28,10 +28,14 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-# Devise - authentication gem for Rails
+# Devise - authentication gem
 gem 'devise'
+# Pundit - authorizarion gem
 gem 'pundit'
+
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+
+# Tags - ActsAsTaggableOn gem
+gem 'acts-as-taggable-on', '~> 6.0'

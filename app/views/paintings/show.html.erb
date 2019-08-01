@@ -1,6 +1,6 @@
 <div class="paintings-show">
   <h1>Paintings</h1>
-  
+
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
@@ -11,7 +11,7 @@
       <p><%= @painting.location %></p>
     </div>
   </div>
-  
+
   <% if (@painting.user != current_user) %>
     <div class="btn btn-success">
         <%= link_to "Book", new_painting_booking_path(@painting) %>
@@ -23,7 +23,7 @@
       <%= link_to "Edit", edit_painting_path(@painting) %>
     </div>
   <% end %>
-  
+
   <% if policy(@painting).destroy? %>
     <div class="btn btn-outline-primary">
       <%= link_to "Delete", painting_path(@painting), method: :delete %>
@@ -36,4 +36,17 @@
       <p><%= review.content %></p>
     <% end %>
   <% end %>
+
+  <h1><%= @painting.title %></h1>
+
+  <h3>Related Paintings</h3>
+  <% @related_paintings.each do |related| %>
+    <p><%= link_to related.title, painting_path(related) %></p>
+  <% end %>
+
+  <h3>Related Tags</h3>
+  <% @painting.tag_list.each do |tag| %>
+    <p><%= link_to tag, tagged_path(tag: tag) %></p>
+  <% end %>
+
 </div>

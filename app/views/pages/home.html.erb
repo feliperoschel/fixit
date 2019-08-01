@@ -15,35 +15,35 @@
   <div class="row">
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1533213443190-1d96641c17ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
-      <h2>Abstract</h2>
+      <h2><%= link_to @populars[0].name, tagged_path(tag: @populars[0].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1549985113-b697753f5bfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-      <h2>Painterly</h2>
+      <h2><%= link_to @populars[1].name, tagged_path(tag: @populars[1].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1556005693-00fff02f134c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
-      <h2>Photorealism</h2>
+      <h2><%= link_to @populars[2].name, tagged_path(tag: @populars[2].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1473798486505-a5279da7afa2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1282&q=80" alt="">
-      <h2>Graffiti</h2>
+      <h2><%= link_to @populars[3].name, tagged_path(tag: @populars[3].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1563724221518-9214b4d7a8f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
-      <h2>Realism</h2>
+      <h2><%= link_to @populars[4].name, tagged_path(tag: @populars[4].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1554757388-29a2a86ef02f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
-      <h2>Minimal</h2>
+      <h2><%= link_to @populars[5].name, tagged_path(tag: @populars[5].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1468796835058-f43f737a4941?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
-      <h2>Modernism</h2>
+      <h2><%= link_to @populars[6].name, tagged_path(tag: @populars[6].name) %></h2>
     </div>
     <div class="recommended col-sm-12 col-md-6 col-lg-3">
       <img src="https://images.unsplash.com/photo-1505562130589-9879683e72da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
-      <h2>See all</h2>
+      <h2><%= link_to 'See all', tagged_path %></h2>
     </div>
   </div>
 
