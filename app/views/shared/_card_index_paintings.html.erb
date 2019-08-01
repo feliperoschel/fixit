@@ -1,6 +1,7 @@
 <% @paintings.each do |painting| %>
   <div class="card-index-painting" style="width: 18rem;">
-    <img class="card-img-top" src="<%= image_url painting.photo%>" alt="Card image cap">
+    <% raise %>
+    <img class="card-img-top" src="<%= image_url painting.photo %>" alt="Card image cap">
     <div class="card-body">
       <div class="d-flex justify-content-between">
         <h5 class="card-title"><%= painting.title %></h5>

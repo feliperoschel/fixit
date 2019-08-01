@@ -20,6 +20,7 @@ User.delete_all if Rails.env.development?
  password: '123456')
  user.save!
 end
+
 images = [
 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
 'https://images.unsplash.com/photo-1544867885-2333f61544ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
@@ -32,6 +33,7 @@ images = [
 'https://images.unsplash.com/photo-1531132076534-0120b6aa12cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
 'https://images.unsplash.com/photo-1538935118162-fa31d31b48a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 ]
+
 index = -1
 User.all.each do |user|
  index += 1
@@ -39,14 +41,13 @@ User.all.each do |user|
    title: Faker::Book.title,
    description: Faker::Commerce.product_name,
    category: Faker::Book.genre,
-   price: Faker::Commerce.price ,
-   photo: images[index] ,
+   price: Faker::Commerce.price,
+   photo: images[index],
    location: Faker::Address.city,
  user: user)
  painting.save!
-
-
 end
+
 20.times do
  user = User.all.sample
  start_date = Faker::Date.forward(23)
@@ -61,17 +62,16 @@ end
    painting: painting
  )
 end
+
 Painting.all.each do |painting|
-
-rand(3..5).times do
- review = Review.new(
-   painting: painting,
-   date: Faker::Date.forward(23),
-   title: Faker::Lorem.sentence,
-   content: Faker::Lorem.sentences,
-   rating: rand(0..5)
- )
- review.save!
-end
-
+  rand(3..5).times do
+  review = Review.new(
+    painting: painting,
+    date: Faker::Date.forward(23),
+    title: Faker::Lorem.sentence,
+    content: Faker::Lorem.sentences,
+    rating: rand(0..5)
+  )
+  review.save!
+  end
 end
