@@ -1,13 +1,25 @@
-<h2>Your painting</h2>
-<%= cl_image_tag @painting.photo, height: 300, width: 400, crop: :fill %>
+<p>paintings#show show.html.erb</p>
+<p><%= @painting.title %></p>
+<p><%= @painting.description %></p>
+<p><%= @painting.price %></p>
+<p><%= @painting.category %></p>
+<p><%= @painting.location %></p>
 
-<p>Title : <%= @painting.title %></p>
-<p>Description : <%= @painting.description %></p>
-<p>Price : <%= @painting.price %></p>
-<p>Category : <%= @painting.category %></p>
-<p>Address : <%= @painting.location %></p>
+<% if (@painting.user != current_user) %>
+  <%= link_to "Book", new_painting_booking_path(@painting) %>
+<% end %>
 
+<% if policy(@painting).edit? %>
+  <%= link_to "Edit", edit_painting_path(@painting) %>
+<% end %>
 
-<p><%= link_to "Book", new_painting_booking_path(@painting) %></p>
-<p><%= link_to "Edit", edit_painting_path(@painting) %></p>
-<p><%= link_to "Delete", painting_path(@painting), method: :delete %></p>
+<% if policy(@painting).destroy? %>
+  <%= link_to "Delete", painting_path(@painting), method: :delete %>
+<% end %>
+
+<% unless @reviews.nil? %>
+  <h5>Reviews</h5>
+  <% @reviews.each do |review| %>
+    <p><%= review.content %></p>
+  <% end %>
+<% end %>

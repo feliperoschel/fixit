@@ -20,11 +20,11 @@ class BookingsController < ApplicationController
   def create
     @user = current_user
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = @user
     @painting = Painting.find(params[:painting_id])
     @booking.painting = @painting
     # @total_price = params[:end_date] - params[:start_date] * params[:paintings.price]
-    authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
