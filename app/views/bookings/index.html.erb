@@ -1,23 +1,61 @@
-<h2>Your bookings</h2>
-<% @bookings.each do |booking| %>
-  <h5>Painting name : <%= booking.painting.title %></h5>
-  <p>From : <%= booking.start_date %></p>
-  <p>To : <%= booking.end_date %></p>
-  <p>Address : <%= booking.location %></p>
-  <p>Price : <%= booking.painting.price %> rmb</p>
+<div class="booking-index">
 
-  <%= link_to "edit", edit_booking_path(booking)  %>
-  <%= link_to "Review", new_painting_review_path(booking.painting)  %>
-<% end %>
+  <h2>Your bookings</h2>
 
-<h2>Your Paintings booked</h2>
-<% @paintings.each do |painting| %>
-  <h5>Painting name : <%= painting.title %></h5>
-  <% painting.bookings.each do |booking| %>
-    <p>By : <%= booking.user.email  %></p>
-    <p>From : <%= booking.start_date %></p>
-    <p>To : <%= booking.end_date %></p>
-    <p>Address : <%= booking.location %></p>
+  <% @bookings.each do |booking| %>
+
+    <div class="card-product">
+      <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
+
+      <div class="card-container">
+        <div class="card-product-infos">
+          <h2>
+            <%= booking.painting.title %> by <%= current_user.first_name %> <%= current_user.last_name %> -
+            <span class="price"><%= booking.painting.price %>/per day</span>
+          </h2>
+          <p><%= booking.painting.description %></p>
+          <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
+        </div>
+        <div>
+          <%= link_to "Review", new_painting_review_path(booking.painting)  %> /
+          <%= link_to "edit", edit_booking_path(booking)  %>
+        </div>
+
+      </div>
+
+    </div>
+
+
   <% end %>
-  <p>Price : <%= painting.price %> rmb</p>
-<% end %>
+
+  <h2>My Paintings rented out</h2>
+
+  <% @paintings.each do |painting| %>
+
+    <% painting.bookings.each do |booking| %>
+
+      <div class="card-product">
+        <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
+
+        <div class="card-container">
+          <div class="card-product-infos">
+            <h2>
+              <%= booking.painting.title %> -
+              <span class="price"><%= booking.painting.price %>/per day</span>
+            </h2>
+            <p><%= booking.painting.description %></p>
+            <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
+          </div>
+          <div>
+            <p>rented by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+
