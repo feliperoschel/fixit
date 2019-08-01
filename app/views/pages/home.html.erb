@@ -50,24 +50,15 @@
   <!-- WHAT YOU MIGHT LIKE -->
   <h2 class="bottom">See what you might like</h2>
   <div class="row paintings">
-    <!-- <% @paintings.each do %>
+    <% @paintings.each do |p| %>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <img src="" />
+        <img src="<%= image_url (p.photo) %>" />
         <div>
-          <h4>Title</h4>
-          <p>£99.99</p>
+          <h4><%= p.title %></h4>
+          <p>£<%= p.price %></p>
         </div>
       </div>
-    <% end %> -->
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <img src="https://images.unsplash.com/photo-1518945756765-f8641d60fc0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=994&q=80" />
-      <div>
-        <h4>Banksy's little girl</h4>
-        <p>£99.99</p>
-      </div>
-    </div>
-
+    <% end %>
   </div>
 </div>
 

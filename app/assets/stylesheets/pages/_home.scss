@@ -100,12 +100,14 @@
       }
       div {
         * {
+          font-family: $headers-font;
           font-size: 24px;
           margin: 8px 0;
           margin-bottom: 0px;
         }
         p {
-          font-size: 16px;
+          font-family: $body-font;
+          font-size: 20px;
           margin: 0;
         }
       }
