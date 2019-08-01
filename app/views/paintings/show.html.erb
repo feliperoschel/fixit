@@ -38,8 +38,7 @@
   </div>
 
   <!-- REVIEWS -->
-
-
+  
   <div class="reviews">
     <% if @reviews.empty? %>
       <h6><%= %("No reviews so for this painting") %></h6>
@@ -50,6 +49,18 @@
         <p><%= review.content %></p>
       <% end %>
     <% end %>
-  </div>
+   </div>
 
+  <h1><%= @painting.title %></h1>
+
+  <h3>Related Paintings</h3>
+  <% @related_paintings.each do |related| %>
+    <p><%= link_to related.title, painting_path(related) %></p>
+  <% end %>
+
+  <h3>Related Tags</h3>
+  <% @painting.tag_list.each do |tag| %>
+    <p><%= link_to tag, tagged_path(tag: tag) %></p>
+  <% end %>
+  
 </div>

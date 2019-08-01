@@ -1,4 +1,6 @@
 class Painting < ApplicationRecord
+  acts_as_taggable_on :tags
+  ActsAsTaggableOn.force_lowercase = true
   validates :title, presence: true, length: {maximum: 50}
   validates :description, presence: true, length: {maximum: 300}
   validates :category, :price, :photo, presence: true

@@ -5,7 +5,24 @@
 #
 #   movies = Movie.create([{ name: ‘Star Wars’ }, { name: ‘Lord of the Rings’ }])
 #   Character.create(name: ‘Luke’, movie: movies.first)
-require "faker"
+
+categories = ['Impressionism','Renaissance','Modern','Baroque','Romanticism','Rococo','Realism',
+              'Expressionism','Mannerism','Neoclassicism','Pop Art','Abstract','Surrealism',
+              'Cubism','Contemporary','Futurism','Minimalism']
+
+images = [
+  'https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1544867885-2333f61544ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1524664399170-77e7118fdb6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1531913764164-f85c52e6e654?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1555420087-62ca236e0256?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1306&q=80',
+  'https://images.unsplash.com/photo-1563283619-0f960c4b38fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1533158388470-9a56699990c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1533158326339-7f3cf2404354?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=808&q=80',
+  'https://images.unsplash.com/photo-1531132076534-0120b6aa12cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1538935118162-fa31d31b48a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+]
+
 Review.delete_all if Rails.env.development?
 Booking.delete_all if Rails.env.development?
 Painting.delete_all if Rails.env.development?
@@ -16,28 +33,14 @@ User.delete_all if Rails.env.development?
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    # phone_number: Faker::PhoneNumber.cell_phone,
-    password: '123456')
+  password: '123456')
   user.save!
 end
 
-images = [
-'https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1544867885-2333f61544ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1524664399170-77e7118fdb6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1531913764164-f85c52e6e654?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1555420087-62ca236e0256?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1306&q=80',
-'https://images.unsplash.com/photo-1563283619-0f960c4b38fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1533158388470-9a56699990c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1533158326339-7f3cf2404354?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=808&q=80',
-'https://images.unsplash.com/photo-1531132076534-0120b6aa12cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-'https://images.unsplash.com/photo-1538935118162-fa31d31b48a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-]
-
 index = -1
 User.all.each do |user|
- index += 1
- painting = Painting.new(
+  index += 1
+  painting = Painting.new(
     title: Faker::Book.title,
     description: Faker::Commerce.product_name,
     category: Faker::Book.genre,
@@ -46,6 +49,7 @@ User.all.each do |user|
     user: user
   )
   painting.remote_photo_url = images[index]
+  painting.tag_list.add(categories.sample(3))
   painting.save!
 end
 
@@ -61,18 +65,18 @@ end
     location: Faker::Address.full_address,
     user: user,
     painting: painting
- )
+  )
 end
 
 Painting.all.each do |painting|
   rand(3..5).times do
-  review = Review.new(
-    painting: painting,
-    date: Faker::Date.forward(23),
-    title: Faker::Lorem.sentence,
-    content: Faker::Quote.matz,
-    rating: rand(0..5)
-  )
-  review.save!
+    review = Review.new(
+      painting: painting,
+      date: Faker::Date.forward(23),
+      title: Faker::Lorem.sentence,
+      content: Faker::Quote.matz,
+      rating: rand(0..5)
+    )
+    review.save!
   end
 end
