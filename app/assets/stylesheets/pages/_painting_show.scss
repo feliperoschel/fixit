@@ -1,39 +1,87 @@
+
 .paintings-show {
-  // CARD
   h1 {
     text-align: center;
     margin: 60px 0 40px 0;
   }
-  .card-product {
-    overflow: hidden;
-    height: 150px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    width: 45%;
+
+  // BUTTON
+  .button-edit {
+    margin: 0 30px 0 0;
   }
-  .card-product img {
-    height: 100%;
-    width: 150px;
-    object-fit: cover;
+  .button-book {
+  margin: 20px 0 60px 0;
+    .btn
+    {
+      width: 150px;
+    }
   }
-  .card-product h2 {
-    font-size: 16px;
+
+  // CARD
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 500px;
+}
+
+.card-trip > img {
+  height: 340px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  .title {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .price {
+    margin-top: 6px;
     font-weight: bold;
-    margin: 0;
+    color: $green;
   }
-  .card-product p {
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
-  }
-  .card-product .card-product-infos {
-    padding: 16px;
-  }
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
   // REVIEWS
+.reviews {
+  h4 {
+    text-align: center;
+    padding: 20px 0 20px 0;
+  }
+  h6 {
+    text-align: center;
+    font-style: italic;
+  }
+  p {
+    text-align: center;
+  }
+  padding-bottom: 40px;
+}
 
 }
 
