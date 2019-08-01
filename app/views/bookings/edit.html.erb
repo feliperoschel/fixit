@@ -1,0 +1,9 @@
+<% if policy(@booking).update? %>
+  <h1>Booking</h1>
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :start_date%>
+    <%= f.input :end_date %>
+    <%= f.input :location %>
+    <%= f.submit "book", class: "btn btn-primary" %>
+  <% end %>
+<% end %>

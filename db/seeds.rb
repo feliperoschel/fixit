@@ -10,6 +10,7 @@ Review.delete_all if Rails.env.development?
 Booking.delete_all if Rails.env.development?
 Painting.delete_all if Rails.env.development?
 User.delete_all if Rails.env.development?
+
 10.times do
  user = User.new(
    first_name: Faker::Name.first_name,
@@ -43,6 +44,8 @@ User.all.each do |user|
    location: Faker::Address.city,
  user: user)
  painting.save!
+
+
 end
 20.times do
  user = User.all.sample
@@ -59,14 +62,16 @@ end
  )
 end
 Painting.all.each do |painting|
- rand(3..5).times do
-   review = Review.new(
-     painting: painting,
-     date: Faker::Date.forward(23),
-     title: Faker::Lorem.sentence,
-     content: Faker::Lorem.sentences,
-     rating: rand(0..5)
-   )
-   review.save!
- end
+
+rand(3..5).times do
+ review = Review.new(
+   painting: painting,
+   date: Faker::Date.forward(23),
+   title: Faker::Lorem.sentence,
+   content: Faker::Lorem.sentences,
+   rating: rand(0..5)
+ )
+ review.save!
+end
+
 end

@@ -1,7 +1,9 @@
 <% if policy(@booking).show? %>
   <h2>Your Booking</h2>
   <h5><%= @booking.painting.title %></h5>
-  <p><%= @booking.start_date %></p>
-  <p><%= @booking.end_date %></p>
+  <p>From <%= @booking.start_date %></p>
+  <p>To <%= @booking.end_date %></p>
   <p><%= @booking.location %></p>
+  <p><%= @booking.painting.price %> rmb</p>
+  <%= link_to "see all bookings", bookings_path %>
 <% end %>
