@@ -1,39 +1,66 @@
 <div class="paintings-show">
-  <h1>Paintings</h1>
-  
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2><%= @painting.title %></h2>
-      <p><%= @painting.description %></p>
-      <p>$<%= @painting.price %></p>
-      <p><%= @painting.category %></p>
-      <p><%= @painting.location %></p>
+
+  <h1>Your painting</h1>
+
+  <!-- CARD -->
+  <div class="d-flex justify-content-center">
+    <div class="card-trip">
+      <%= cl_image_tag @painting.photo, height: 300, width: 400, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2 class="title"><%= @painting.title %></h2>
+          <p>Description : <%= @painting.description %></p>
+          <p>Category : <%= @painting.category %></p>
+          <p>Address : <%= @painting.location %></p>
+          <p class="price">Price : $<%= @painting.price %></p>
+        </div>
+      </div>
     </div>
   </div>
-  
-  <% if (@painting.user != current_user) %>
-    <div class="btn btn-success">
-        <%= link_to "Book", new_painting_booking_path(@painting) %>
-    </div>
-  <% end %>
 
-  <% if policy(@painting).edit? %>
-    <div class="btn btn-primary">
-      <%= link_to "Edit", edit_painting_path(@painting) %>
-    </div>
-  <% end %>
-  
-  <% if policy(@painting).destroy? %>
-    <div class="btn btn-outline-primary">
-      <%= link_to "Delete", painting_path(@painting), method: :delete %>
-    </div>
-  <% end %>
+  <!-- BUTTONS -->
+  <div class="button-book">
+    <div class="d-flex justify-content-center">
+      <% if (@painting.user != current_user) %>
+            <%= link_to "Book", new_painting_booking_path(@painting), class: "btn btn-success" %>
+      <% end %>
 
-  <% unless @reviews.nil? %>
-    <h5>Reviews</h5>
-    <% @reviews.each do |review| %>
-      <p><%= review.content %></p>
+      <div class="button-edit">
+        <% if policy(@painting).edit? %>
+            <%= link_to "Edit", edit_painting_path(@painting), class: "btn btn-success" %>
+        <% end %>
+      </div>
+
+      <% if policy(@painting).destroy? %>
+          <%= link_to "Delete", painting_path(@painting), class: "btn btn-outline-success", method: :delete %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  
+  <div class="reviews">
+    <% if @reviews.empty? %>
+      <h6><%= %("No reviews so for this painting") %></h6>
+    <% else %>
+      <h4>Reviews</h4>
+      <% @reviews.each do |review| %>
+      <%= review %>
+        <p><%= review.content %></p>
+      <% end %>
     <% end %>
+   </div>
+
+  <h1><%= @painting.title %></h1>
+
+  <h3>Related Paintings</h3>
+  <% @related_paintings.each do |related| %>
+    <p><%= link_to related.title, painting_path(related) %></p>
   <% end %>
+
+  <h3>Related Tags</h3>
+  <% @painting.tag_list.each do |tag| %>
+    <p><%= link_to tag, tagged_path(tag: tag) %></p>
+  <% end %>
+  
 </div>

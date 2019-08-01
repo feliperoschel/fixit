@@ -3,17 +3,22 @@ class PaintingsController < ApplicationController
   before_action :set_painting, only: [:show, :edit, :update, :destroy]
 
   def index
-    @paintings = policy_scope(Painting).order(created_at: :desc)
-    @search = params["search"]
-    if @search.present? && @search["title"] != ""
-      @title = @search["title"]
-      @paintings = Painting.where("title ILIKE ?", "%#{@title}%")
+    if params[:tag].present?
+      @paintings = policy_scope(Painting.tagged_with(params[:tag]))
+    else
+      @paintings = policy_scope(Painting).order(created_at: :desc)
+      @search = params["search"]
+      if @search.present? && @search["title"] != ""
+        @title = @search["title"]
+        @paintings = Painting.where("title ILIKE ?", "%#{@title}%")
+      end
     end
   end
 
   def show
     authorize @painting
     @reviews = @painting.reviews
+    @related_paintings = @painting.find_related_tags
   end
 
   def new

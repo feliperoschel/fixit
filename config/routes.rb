@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/tagged', to: 'paintings#index', as: :tagged
   get 'profiles/show'
   devise_for :users
   resources :paintings do
@@ -7,6 +8,6 @@ Rails.application.routes.draw do
 
   end
   resources :bookings, only: [:edit, :update, :show, :index]
-   resources :profiles, only: [:show]
+  resources :profiles, only: [:show]
   root to: 'pages#home'
 end
