@@ -6,13 +6,14 @@ class PaintingsController < ApplicationController
     @paintings = policy_scope(Painting).order(created_at: :desc)
     @search = params["search"]
     if @search.present? && @search["title"] != ""
-        @title = @search["title"]
-        @paintings = Painting.where("title ILIKE ?", "%#{@title}%")
+      @title = @search["title"]
+      @paintings = Painting.where("title ILIKE ?", "%#{@title}%")
     end
   end
 
   def show
     authorize @painting
+    @reviews = @painting.reviews
   end
 
   def new
@@ -55,7 +56,7 @@ class PaintingsController < ApplicationController
   private
 
   def painting_params
-    params.require(:painting).permit(:title, :description, :price, :category, :location)
+    params.require(:painting).permit(:title, :description, :price, :category, :location, :photo)
   end
 
   def set_painting

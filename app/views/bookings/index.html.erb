@@ -1,28 +1,23 @@
 <h2>Your bookings</h2>
-
 <% @bookings.each do |booking| %>
+  <h5>Painting name : <%= booking.painting.title %></h5>
+  <p>From : <%= booking.start_date %></p>
+  <p>To : <%= booking.end_date %></p>
+  <p>Address : <%= booking.location %></p>
+  <p>Price : <%= booking.painting.price %> rmb</p>
 
-    <h5>Painting name : <%= booking.painting.title %></h5>
+  <%= link_to "edit", edit_booking_path(booking)  %>
+  <%= link_to "Review", new_painting_review_path(booking.painting)  %>
+<% end %>
+
+<h2>Your Paintings booked</h2>
+<% @paintings.each do |painting| %>
+  <h5>Painting name : <%= painting.title %></h5>
+  <% painting.bookings.each do |booking| %>
+    <p>By : <%= booking.user.email  %></p>
     <p>From : <%= booking.start_date %></p>
     <p>To : <%= booking.end_date %></p>
     <p>Address : <%= booking.location %></p>
-    <p>Price : <%= booking.painting.price %> rmb</p>
-
-    <%= link_to "edit", edit_booking_path(booking)  %>
-
-<% end %>
-
-
-<h2>Your Paintings booked</h2>
-
-<% @paintings.each do |painting| %>
-    <h5>Painting name : <%= painting.title %></h5>
-
-    <% painting.bookings.each do |booking| %>
-      <p>By : <%= booking.user.email  %></p>
-      <p>From : <%= booking.start_date %></p>
-      <p>To : <%= booking.end_date %></p>
-      <p>Address : <%= booking.location %></p>
   <% end %>
   <p>Price : <%= painting.price %> rmb</p>
 <% end %>
