@@ -1,9 +1,15 @@
-<% if policy(@booking).create? %>
-  <h1>Booking</h1>
-  <%= simple_form_for [@painting, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :location %>
-    <%= f.submit "book", class: "btn btn-primary" %>
-  <% end %>
-<% end %>
+<div class="booking-new">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <% if policy(@booking).create? %>
+        <h1>Booking</h1>
+        <%= simple_form_for [@painting, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.input :location %>
+          <%= f.submit "book", class: "btn btn-success" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

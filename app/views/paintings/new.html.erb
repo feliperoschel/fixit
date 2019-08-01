@@ -1,12 +1,17 @@
-<p>Paintings#new - views/paintings/new.html.erb</p>
-<% if policy(@painting).create? %>
-  <h1>Painting</h1>
-  <%= simple_form_for [@painting] do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :category %>
-    <%= f.input :location %>
-    <%= f.submit "Create", class: "btn btn-primary" %>
-  <% end %>
-<% end %>
+<div class="painting-new">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <% if policy(@painting).create? %>
+        <h1>Painting</h1>
+        <%= simple_form_for [@painting] do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.input :category %>
+          <%= f.input :location %>
+          <%= f.submit "Create", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+   </div>
+  </div>
+</div>
