@@ -74,7 +74,7 @@ Painting.all.each do |painting|
       painting: painting,
       date: Faker::Date.forward(23),
       title: Faker::Lorem.sentence,
-      content: Faker::Lorem.sentences,
+      content: Faker::Quote.matz,
       rating: rand(0..5)
     )
     review.save!

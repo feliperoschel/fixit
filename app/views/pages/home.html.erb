@@ -6,7 +6,7 @@
     <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: '' } do |f| %>
     <%= f.input :title, label: false, placeholder: "Try: 'monalisa'", input_html: {value: ""} %>
     <% end %>
-    <a class="browse">or browse all paintings</a>
+    <%= link_to  "Or browse all paintings", paintings_path, class: "browse" %>
 </div>
 
 <div class="container">
@@ -54,7 +54,7 @@
       <div class="col-sm-12 col-md-6 col-lg-4">
         <img src="<%= image_url (p.photo) %>" />
         <div>
-          <h4><%= p.title %></h4>
+          <h4><%= link_to  p.title, painting_path(p) %></h4>
           <p>£<%= p.price %></p>
         </div>
       </div>
