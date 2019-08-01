@@ -1,7 +1,6 @@
 <div class="paintings-show">
-
   <h1>Paintings</h1>
-
+  
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
@@ -12,27 +11,24 @@
       <p><%= @painting.location %></p>
     </div>
   </div>
+  
+  <% if (@painting.user != current_user) %>
+    <div class="btn btn-success">
+        <%= link_to "Book", new_painting_booking_path(@painting) %>
+    </div>
+  <% end %>
 
-
-
-    <% if (@painting.user != current_user) %>
-      <div class="btn btn-success">
-          <%= link_to "Book", new_painting_booking_path(@painting) %>
-      </div>
-    <% end %>
-
-    <% if policy(@painting).edit? %>
-      <div class="btn btn-primary">
-        <%= link_to "Edit", edit_painting_path(@painting) %>
-      </div>
-    <% end %>
-
-
-    <% if policy(@painting).destroy? %>
-      <div class="btn btn-outline-primary">
-        <%= link_to "Delete", painting_path(@painting), method: :delete %>
-      </div>
-    <% end %>
+  <% if policy(@painting).edit? %>
+    <div class="btn btn-primary">
+      <%= link_to "Edit", edit_painting_path(@painting) %>
+    </div>
+  <% end %>
+  
+  <% if policy(@painting).destroy? %>
+    <div class="btn btn-outline-primary">
+      <%= link_to "Delete", painting_path(@painting), method: :delete %>
+    </div>
+  <% end %>
 
   <% unless @reviews.nil? %>
     <h5>Reviews</h5>
@@ -40,5 +36,4 @@
       <p><%= review.content %></p>
     <% end %>
   <% end %>
-
 </div>
