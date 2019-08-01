@@ -5,5 +5,14 @@
 <p><%= @painting.category %></p>
 <p><%= @painting.location %></p>
 <p><%= link_to "Book", new_painting_booking_path(@painting) %></p>
-<p><%= link_to "Edit", edit_painting_path(@painting) %></p>
-<p><%= link_to "Delete", painting_path(@painting), method: :delete %></p>
+<% if policy(@painting).edit? %>
+  <p><%= link_to "Edit", edit_painting_path(@painting) %></p>
+<% end %>
+<% if policy(@painting).destroy? %>
+  <p><%= link_to "Delete", painting_path(@painting), method: :delete %></p>
+<% end %>
+<p>------------</p>
+<h5>Reviews</h5>
+<% @reviews.each do |review| %>
+  <p><%= review.content %></p>
+<% end %>

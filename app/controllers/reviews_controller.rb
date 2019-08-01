@@ -2,11 +2,12 @@ class ReviewsController < ApplicationController
   before_action :set_painting, only: [:new, :create]
 
   def new
-    @review = Review.new
+    authorize @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
+    authorize @review = Review.new(review_params)
+    @review.painting = @painting
     if @review.save
       redirect_to @painting
     else
@@ -21,6 +22,6 @@ class ReviewsController < ApplicationController
   end
 
   def set_painting
-    @painting = Painting.find(params[:id])
+    @painting = Painting.find(params[:painting_id])
   end
 end
