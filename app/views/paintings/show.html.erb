@@ -4,16 +4,19 @@
 <p><%= @painting.price %></p>
 <p><%= @painting.category %></p>
 <p><%= @painting.location %></p>
+
 <% if (@painting.user != current_user) %>
-  <p><%= link_to "Book", new_painting_booking_path(@painting) %></p>
+  <%= link_to "Book", new_painting_booking_path(@painting) %>
 <% end %>
+
 <% if policy(@painting).edit? %>
-  <p><%= link_to "Edit", edit_painting_path(@painting) %></p>
+  <%= link_to "Edit", edit_painting_path(@painting) %>
 <% end %>
+
 <% if policy(@painting).destroy? %>
-  <p><%= link_to "Delete", painting_path(@painting), method: :delete %></p>
+  <%= link_to "Delete", painting_path(@painting), method: :delete %>
 <% end %>
-<p>------------</p>
+
 <% unless @reviews.nil? %>
   <h5>Reviews</h5>
   <% @reviews.each do |review| %>

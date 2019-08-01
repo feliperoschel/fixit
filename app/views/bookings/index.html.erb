@@ -5,10 +5,11 @@
   <p>To : <%= booking.end_date %></p>
   <p>Address : <%= booking.location %></p>
   <p>Price : <%= booking.painting.price %> rmb</p>
-  <p>-------------------------------</p>
-  <p><%= link_to "edit", edit_booking_path(booking)  %></p>
-  <p><%= link_to "Review", new_painting_review_path(booking.painting)  %></p>
+
+  <%= link_to "edit", edit_booking_path(booking)  %>
+  <%= link_to "Review", new_painting_review_path(booking.painting)  %>
 <% end %>
+
 <h2>Your Paintings booked</h2>
 <% @paintings.each do |painting| %>
   <h5>Painting name : <%= painting.title %></h5>
