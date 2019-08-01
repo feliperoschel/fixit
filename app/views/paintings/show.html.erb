@@ -1,25 +1,44 @@
-<p>paintings#show show.html.erb</p>
-<p><%= @painting.title %></p>
-<p><%= @painting.description %></p>
-<p><%= @painting.price %></p>
-<p><%= @painting.category %></p>
-<p><%= @painting.location %></p>
+<div class="paintings-show">
 
-<% if (@painting.user != current_user) %>
-  <%= link_to "Book", new_painting_booking_path(@painting) %>
-<% end %>
+  <h1>Paintings</h1>
 
-<% if policy(@painting).edit? %>
-  <%= link_to "Edit", edit_painting_path(@painting) %>
-<% end %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= @painting.title %></h2>
+      <p><%= @painting.description %></p>
+      <p>$<%= @painting.price %></p>
+      <p><%= @painting.category %></p>
+      <p><%= @painting.location %></p>
+    </div>
+  </div>
 
-<% if policy(@painting).destroy? %>
-  <%= link_to "Delete", painting_path(@painting), method: :delete %>
-<% end %>
 
-<% unless @reviews.nil? %>
-  <h5>Reviews</h5>
-  <% @reviews.each do |review| %>
-    <p><%= review.content %></p>
+
+    <% if (@painting.user != current_user) %>
+      <div class="btn btn-success">
+          <%= link_to "Book", new_painting_booking_path(@painting) %>
+      </div>
+    <% end %>
+
+    <% if policy(@painting).edit? %>
+      <div class="btn btn-primary">
+        <%= link_to "Edit", edit_painting_path(@painting) %>
+      </div>
+    <% end %>
+
+
+    <% if policy(@painting).destroy? %>
+      <div class="btn btn-outline-primary">
+        <%= link_to "Delete", painting_path(@painting), method: :delete %>
+      </div>
+    <% end %>
+
+  <% unless @reviews.nil? %>
+    <h5>Reviews</h5>
+    <% @reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
   <% end %>
-<% end %>
+
+</div>
