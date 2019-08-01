@@ -1,4 +1,11 @@
-<p>index.html.erb</p>
-<% @paintings.each do |painting| %>
-  <p><%= link_to painting.title, painting %></p>
-<% end %>
+<!-- <p>index.html.erb</p> -->
+
+<div class="container">
+  <h1 class="title-index-painting" style="text-align: center">Select from our beautiful collection</h1>
+  <div class="row d-flex justify-content-center">
+
+  <%= render "shared/card_index_paintings" %>
+
+  </div>
+</div>
+
