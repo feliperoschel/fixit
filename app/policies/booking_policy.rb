@@ -1,6 +1,6 @@
 class BookingPolicy < ApplicationPolicy
   def show?
-    true
+    record.user == user
   end
 
   def create?
