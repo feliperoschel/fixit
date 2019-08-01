@@ -10,46 +10,52 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-      <a href="/"><h4 class="logo">HomeGallery</h4></a>
-      <!-- SEARCH BAR -->
-      <% unless @no_search_bar %>
-        <div class="search-bar">
-          <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-            <%= f.input :title, label: false, placeholder: "Search...", input_html: {value: ""} %>
-          <% end %>
-        </div>
-      <% end %>
-
-      <% if current_user %>
-        <!-- IF USER IS LOGGED IN -->
-        <div class="options">
-          <!-- FIXME: logout and host a service-->
-          <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
-          <%= link_to  "Your Bookings", bookings_path %>
-          <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
-          <!-- TODO: CREATE AVATAR -->
-        </div>
+    <!-- WRAPPER FOR BODY -->
+    <div>
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <a href="/"><h4 class="logo">HomeGallery</h4></a>
+        <!-- SEARCH BAR -->
+        <% unless @no_search_bar %>
+          <div class="search-bar">
+            <%= simple_form_for :search, defaults: { required: false }, url: paintings_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+              <%= f.input :title, label: false, placeholder: "Search...", input_html: {value: ""} %>
+            <% end %>
+          </div>
+        <% end %>
+  
+        <% if current_user %>
+          <!-- IF USER IS LOGGED IN -->
+          <div class="options">
+            <!-- FIXME: logout and host a service-->
+            <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
+            <%= link_to  "Your Bookings", bookings_path %>
+            <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
+            <!-- TODO: CREATE AVATAR -->
+          </div>
+        <% else %>
+          <!-- USER IS NOT LOGGED In -->
+          <div class="options">
+            <%= link_to  "Login", new_user_session_path %>
+            <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
+          </div>
+        <% end %>
+      </div>
+  
+      <!-- CONTAINER -->
+      <% if @no_container %>
+        <div>
       <% else %>
-        <!-- USER IS NOT LOGGED In -->
-        <div class="options">
-          <!-- FIXME: erb tag link_to -->
-          <%= link_to  "Login", new_user_session_path %>
-          <%= link_to  "Host a service", new_painting_path, class: "host-service" %>
-        </div>
+        <div class="container">
       <% end %>
+      <%= yield %>
+      </div>
     </div>
 
-    <!-- CONTAINER -->
-    <% if @no_container %>
-      <div>
-    <% else %>
-      <div class="container">
-    <% end %>
-
-    <%= yield %>
-    </div>
+    <!-- TODO: FOOTER -->
+    <!-- <footer class="page-footer">
+      <p>asdas</p>
+    </footer> -->
 
     <!-- JAVASCRIPT -->
     <%= javascript_include_tag 'application' %>
