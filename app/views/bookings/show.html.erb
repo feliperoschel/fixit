@@ -20,7 +20,7 @@
       <!-- EDIT BOOKING -->
       <% if @booking.status != 'canceled' %>
         <%= link_to "Edit Booking", edit_booking_path %>
-        <%= link_to "Cancel", booking_path(@booking, booking: {status: 'canceled'}), method: :put %>
+        <%= link_to "Cancel", booking_path(@booking, booking: {status: 'canceled'}), method: :put, data: { confirm: 'Are you sure you want to cancel the current Booking?' } %>
       <% else %>
         <p>CANCELED</p>
       <% end %>
