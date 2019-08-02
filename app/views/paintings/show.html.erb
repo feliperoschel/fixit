@@ -20,10 +20,12 @@
 
   <!-- BUTTONS -->
   <div class="button-book">
-    <div class="d-flex justify-content-center">
-      <% if (@painting.user != current_user) %>
+    <div class="d-flex justify-content-sm-center">
+      <div class="button-edit">
+        <% if (@painting.user != current_user) %>
             <%= link_to "Book", new_painting_booking_path(@painting), class: "btn btn-success" %>
-      <% end %>
+        <% end %>
+      </div>
 
       <div class="button-edit">
         <% if policy(@painting).edit? %>
@@ -31,22 +33,31 @@
         <% end %>
       </div>
 
-      <% if policy(@painting).destroy? %>
-          <%= link_to "Delete", painting_path(@painting), class: "btn btn-outline-success", method: :delete %>
-      <% end %>
+      <div class="button-edit">
+        <% if policy(@painting).destroy? %>
+            <%= link_to "Delete", painting_path(@painting), class: "btn btn-outline-success", method: :delete %>
+        <% end %>
+      </div>
+
+      <div class="button-edit">
+        <%= link_to "Back", paintings_path , class: "btn btn-outline-success" %>
+      </div>
+
     </div>
   </div>
 
   <!-- REVIEWS -->
-  
+
   <div class="reviews">
     <% if @reviews.empty? %>
       <h6><%= %("No reviews so for this painting") %></h6>
     <% else %>
       <h4>Reviews</h4>
       <% @reviews.each do |review| %>
-      <%= review %>
+        <p><%= review.title %></p>
         <p><%= review.content %></p>
+        <p><%= review.date %></p>
+        <p><%= review.rating %></p>
       <% end %>
     <% end %>
    </div>
@@ -62,5 +73,5 @@
   <% @painting.tag_list.each do |tag| %>
     <p><%= link_to tag, tagged_path(tag: tag) %></p>
   <% end %>
-  
+
 </div>
