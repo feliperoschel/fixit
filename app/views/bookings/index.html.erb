@@ -2,37 +2,11 @@
 
   <h2>Your bookings</h2>
 
-  <% @bookings.each do |booking| %>
+  <% if @bookings == [] %>
+    <p>You have no booking currently</p>
+  <% else %>
 
-    <div class="card-product">
-      <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
-
-      <div class="card-container">
-        <div class="card-product-infos">
-          <h2>
-            <%= booking.painting.title %> by <%= current_user.first_name %> <%= current_user.last_name %> -
-            <span class="price"><%= booking.painting.price %>/per day</span>
-          </h2>
-          <p><%= booking.painting.description %></p>
-          <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
-        </div>
-        <div>
-          <%= link_to "Review", new_painting_review_path(booking.painting)  %> /
-          <%= link_to "edit", edit_booking_path(booking)  %>
-        </div>
-
-      </div>
-
-    </div>
-
-
-  <% end %>
-
-  <h2>My Paintings rented out</h2>
-
-  <% @paintings.each do |painting| %>
-
-    <% painting.bookings.each do |booking| %>
+    <% @bookings.each do |booking| %>
 
       <div class="card-product">
         <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
@@ -40,19 +14,55 @@
         <div class="card-container">
           <div class="card-product-infos">
             <h2>
-              <%= booking.painting.title %> -
+              <%= booking.painting.title %> by <%= current_user.first_name %> <%= current_user.last_name %> -
               <span class="price"><%= booking.painting.price %>/per day</span>
             </h2>
             <p><%= booking.painting.description %></p>
             <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
           </div>
           <div>
-            <p>rented by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <%= link_to "Review", new_painting_review_path(booking.painting)  %> /
+            <%= link_to "edit", edit_booking_path(booking)  %>
           </div>
 
         </div>
 
       </div>
+    <% end %>
+  <% end %>
+
+  <% rent_out = [] %>
+  <% @paintings.each do |painting| %>
+    <% painting.bookings.each do |booking| %>
+      <% rent_out << booking %>
+    <% end %>
+  <% end %>
+
+  <% unless rent_out == [] %>
+
+    <h2>My Paintings rented out</h2>
+
+    <% @paintings.each do |painting| %>
+      <% painting.bookings.each do |booking| %>
+        <div class="card-product">
+          <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
+
+          <div class="card-container">
+            <div class="card-product-infos">
+              <h2>
+                <%= booking.painting.title %> -
+                <span class="price"><%= booking.painting.price %>/per day</span>
+              </h2>
+              <p><%= booking.painting.description %></p>
+              <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
+            </div>
+            <div>
+              <p>rented by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 
