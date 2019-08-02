@@ -18,7 +18,12 @@
         </div>
         <div>
           <%= link_to "Review", new_painting_review_path(booking.painting)  %> /
-          <%= link_to "edit", edit_booking_path(booking)  %>
+          <% if booking.status != 'canceled' %>
+            <%= link_to "Edit", edit_booking_path(booking)  %>
+            <%= link_to "Cancel", booking_path(booking, booking: {status: 'canceled'}), method: :put, data: { confirm: 'Are you sure you want to cancel the current Booking?' } %>
+          <% else %>
+            <p>CANCELED</p>
+          <% end %>
         </div>
 
       </div>
