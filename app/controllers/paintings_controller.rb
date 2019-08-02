@@ -42,7 +42,7 @@ class PaintingsController < ApplicationController
   def update
     authorize @painting
     if @painting.update(painting_params)
-      render :show
+      redirect_to @painting
     else
       render :edit
     end

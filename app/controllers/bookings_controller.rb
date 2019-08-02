@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @painting = Painting.find(params[:painting_id])
     @booking.painting = @painting
-    # @total_price = params[:end_date] - params[:start_date] * params[:paintings.price]
+    @booking.total_price = (@booking.end_date - @booking.start_date) * @booking.painting.price
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :location, :time)
+    params.require(:booking).permit(:start_date, :end_date, :location, :time, :status)
   end
 
 end
