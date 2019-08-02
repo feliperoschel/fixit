@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_08_02_033528) do
     t.date "start_date"
     t.date "end_date"
     t.string "location"
-    t.time "time"
     t.bigint "user_id"
     t.bigint "painting_id"
     t.datetime "created_at", null: false
@@ -98,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_08_02_033528) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "photo"
+    t.string "photo", default: "image/upload/v1564732079/iulfmkvfv2gzx59x0uaj.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
