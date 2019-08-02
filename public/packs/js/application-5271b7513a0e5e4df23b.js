@@ -95,14 +95,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'webpacker'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'switchTabs'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 
-
-
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'switchTabs'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
 
 /***/ }),
 
@@ -17811,4 +17806,4 @@ module.exports = g;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=application-e076454030667ab1f050.js.map
+//# sourceMappingURL=application-5271b7513a0e5e4df23b.js.map
