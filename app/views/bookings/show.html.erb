@@ -12,13 +12,18 @@
           <h3><%= @booking.painting.title %></h3>
           <p class="address"><%= @booking.location %></p>
         </div>
-        <p>RMB: <%= @booking.painting.price %></p>
+        <p>Price: $<%= @booking.painting.price %></p>
       </div>
       <!-- BOOKING -->
       <p><strong>Booking:</strong> &nbsp;<%= @booking.start_date %> to <%= @booking.end_date %></p>
 
       <!-- EDIT BOOKING -->
-      <%= link_to "Edit Booking", edit_booking_path %>
+      <% if @booking.status != 'canceled' %>
+        <%= link_to "Edit Booking", edit_booking_path %>
+        <%= link_to "Cancel", booking_path(@booking, booking: {status: 'canceled'}), method: :put, data: { confirm: 'Are you sure you want to cancel the current Booking?' } %>
+      <% else %>
+        <p>CANCELED</p>
+      <% end %>
     </div>
   </div>
 
