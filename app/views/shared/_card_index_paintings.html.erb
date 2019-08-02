@@ -14,10 +14,13 @@
       </div>
 
       <div class="x">
-        <%= link_to "Book", new_painting_booking_path(painting), class: "btn btn-success" %>
+        <% if (painting.user != current_user) %>
+          <%= link_to "Book", new_painting_booking_path(painting), class: "btn btn-success" %>
+        <% else %>
+          <%= link_to "Edit", edit_painting_path(@painting), class: "btn btn-success" %>
+        <% end %>
         <%= link_to "Details", painting_path(painting), class: "btn btn-outline-success" %></div>
       </div>
 
   </div>
 <% end %>
-
