@@ -1,66 +1,132 @@
-<div class="booking-index">
+<div class='booking-index'>
+  <div id="booking-index-tabs">
+    <h4 class='bookings'>Your Bookings</h4>
+    <h4 class='all-paintings'>All Your Paintings</h4>
+    <h4 class='rented'>All Your Rented Paintings</h4>
+  </div>
 
-  <h2>Your bookings</h2>
+  <div class="show-res">
+  </div>
 
-  <% @bookings.each do |booking| %>
+  <!-- JAVASCRIPT -->
+  <script>
+    const addClassSelected = (target) => {
+      // take parent class -> get children -> remove classes for all children
+      const children = target.parentElement.children;
+      const childAmount = target.parentElement.childElementCount;
+      for (let i=0; i<childAmount; i++) {
+        children[i].classList.remove("selected");
+      }
+      // add class
+      target.classList.add("selected");
+    }
 
-    <div class="card-product">
-      <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
+    this.addEventListener("click", (e) => {
+      // INIT 
+      const className = e.target.className;
+      const whereToShow = document.querySelector(".show-res");
 
-      <div class="card-container">
-        <div class="card-product-infos">
-          <h2>
-            <%= booking.painting.title %> by <%= current_user.first_name %> <%= current_user.last_name %> -
-            <span class="price"><%= booking.painting.price %>/per day</span>
-          </h2>
-          <p><%= booking.painting.description %></p>
-          <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
-        </div>
-        <div>
-          <%= link_to "Review", new_painting_review_path(booking.painting)  %> /
-          <% if booking.status != 'canceled' %>
-            <%= link_to "Edit", edit_booking_path(booking)  %>
-            <%= link_to "Cancel", booking_path(booking, booking: {status: 'canceled'}), method: :put, data: { confirm: 'Are you sure you want to cancel the current Booking?' } %>
-          <% else %>
-            <p>CANCELED</p>
+      // INJECT HTML
+      if(className == "bookings" && document.querySelector(".allbookings-div") === null) {
+        addClassSelected(e.target);
+        whereToShow.innerHTML = "";
+        // SHOW ALL BOOKINGS
+        whereToShow.insertAdjacentHTML("beforeend", `
+        <% if @bookings != [] %>
+          <% @bookings.each do |booking| %>
+            <div class='card-product allbookings-div'>
+              <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
+              <div class='card-container'>
+                <div class='card-product-infos'>
+                  <h2>
+                    <%= booking.painting.title %> by <%= current_user.first_name %> <%= current_user.last_name %> -
+                    <span class='price'><%= booking.painting.price %>/per day</span>
+                  </h2>
+                  <p><%= booking.painting.description %></p>
+                  <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
+                </div>
+                <div>
+                  <%= link_to 'Review', new_painting_review_path(booking.painting)  %> /
+                  <%= link_to 'edit', edit_booking_path(booking)  %>
+                </div>
+              </div>
+            </div>
           <% end %>
-        </div>
+        <% else %>
+          <h3> You don't have any bookings </h3>
+        <% end %>
+        `)
+      }
+      else if(className == "all-paintings" && document.querySelector(".allpaintings-div") === null) {
+        addClassSelected(e.target);
+        whereToShow.innerHTML = "";
+        // SHOW ALL PAINTINGS
+        whereToShow.insertAdjacentHTML("beforeend", `
+        <% if @paintings != [] %>
+          <% @paintings.each do |painting|%>
+              <div class='card-product allpaintings-div'>
+                <%= cl_image_tag painting.photo, height: 300, width: 400, crop: :fill %>
+                <div class='card-container'>
+                  <div class='card-product-infos'>
+                    <h2>
+                      <%= painting.title %> -
+                      <span class='price'><%= painting.price %>/per day</span>
+                    </h2>
+                    <p><%= painting.description %></p>
+                    <!-- IF BOOKING EXIST THEN SHOW BOOKING DATE -->
+                    <% unless painting.bookings == [] %>
+                    <p>Booking date : <%= painting.bookings.first.start_date %> - <%= painting.bookings.first.end_date %> </p>
+                    <% end %>
+                  </div>
+                  <!-- IF BOOKING EXIST THEN SHOW USER -->
+                  <% unless painting.bookings == [] %>
+                    <div>
+                      <p>rented by <%= painting.bookings.first.user.first_name %> <%= painting.bookings.first.user.last_name %></p>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+          <% end %>
+        <% else %>
+          <h3> You don't have any paintings </h3>
+        <% end %>
+        `)
+      }
+      else if(className == "rented" && document.querySelector(".rented-div") === null) {
+        addClassSelected(e.target);
+        whereToShow.innerHTML = "";
+        // SHOW ALL RENTED PAINTINGS
+        whereToShow.insertAdjacentHTML("beforeend", `
+        <% rent_out = 0 %>
+          <% @paintings.each do |painting| %>
+            <% painting.bookings.each do |booking| %>
+              <% rent_out += 1 %>
+              <div class='card-product rented-div'>
+                <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
+                <div class='card-container'>
+                  <div class='card-product-infos'>
+                    <h2>
+                      <%= booking.painting.title %> -
+                      <span class='price'><%= booking.painting.price %>/per day</span>
+                    </h2>
+                    <p><%= booking.painting.description %></p>
+                    <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
+                  </div>
+                  <div>
+                    <p>rented by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+        <% end %>
 
-      </div>
-
-    </div>
-
-
-  <% end %>
-
-  <h2>My Paintings rented out</h2>
-
-  <% @paintings.each do |painting| %>
-
-    <% painting.bookings.each do |booking| %>
-
-      <div class="card-product">
-        <%= cl_image_tag booking.painting.photo, height: 300, width: 400, crop: :fill %>
-
-        <div class="card-container">
-          <div class="card-product-infos">
-            <h2>
-              <%= booking.painting.title %> -
-              <span class="price"><%= booking.painting.price %>/per day</span>
-            </h2>
-            <p><%= booking.painting.description %></p>
-            <p>Booking date : <%= booking.start_date %> - <%= booking.end_date %> </p>
-          </div>
-          <div>
-            <p>rented by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-          </div>
-
-        </div>
-
-      </div>
-    <% end %>
-  <% end %>
-
+        <% if rent_out == 0 %>
+          <h3> You don't have any paintings rented </h3>
+        <% end %>
+        `)
+      }
+    });
+  </script>
 </div>
 
 
