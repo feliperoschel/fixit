@@ -1,13 +1,25 @@
-<% if policy(@user).show? %>
+<div class="profile-show">
 
-<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+  <% if policy(@user).show? %>
 
-<p><%= @user.first_name %></p>
-<p><%= @user.last_name %></p>
-<p><%= @user.email %></p>
+    <h2>Your profile</h2>
 
+    <div class="card-product">
+      <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill, style:"object-fit:cover" %>
 
+      <div class="card-container">
+        <div class="card-product-infos">
+          <p>First name : <%= @user.first_name %></p>
+          <p>Last name : <%= @user.last_name %></p>
+          <p>Email : <%= @user.email %></p>
+        </div>
+        <div>
+          <%= link_to "Edit my profile", edit_user_registration_path(current_user), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
 
-<% end %>
+  <% end %>
+
+</div>
+
