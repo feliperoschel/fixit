@@ -23,8 +23,7 @@
       <div class="button-book">
       <% if (@painting.user != current_user) %>
             <%= link_to "Book", new_painting_booking_path(@painting), class: "btn btn-success" %>
-        <% end %>
-      </div>
+      <% end %>
 
       <div class="button-edit">
         <% if policy(@painting).edit? %>
@@ -32,16 +31,9 @@
         <% end %>
       </div>
 
-      <div class="button-edit">
-        <% if policy(@painting).destroy? %>
-            <%= link_to "Delete", painting_path(@painting), class: "btn btn-outline-success", method: :delete %>
-        <% end %>
-      </div>
-
-      <div class="button-edit">
-        <%= link_to "Back", paintings_path , class: "btn btn-outline-success" %>
-      </div>
-
+      <% if policy(@painting).destroy? %>
+          <%= link_to "Delete", painting_path(@painting), class: "btn btn-outline-success", method: :delete %>
+      <% end %>
     </div>
   </div>
 
@@ -64,6 +56,7 @@
             </div>
           </div>
         </div>
+
       <% end %>
     <% end %>
    </div>
@@ -92,4 +85,5 @@
       <%= link_to tag, tagged_path(tag: tag) %>
     <% end %>
   </div>
+
 </div>
