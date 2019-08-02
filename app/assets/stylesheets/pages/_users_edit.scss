@@ -1,0 +1,29 @@
+.container-user {
+    .profile-edit-btns {
+        font-family: $headers-font;
+        font-size: 18px;
+        .update {
+            margin: 10vh 20px;
+            margin-top: 2vh;
+            padding: 10px 30px;
+            border: none;
+            background-color: $green;
+        }
+        .cancel {
+            margin: 10vh 20px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: solid 1px $green;
+    
+        }
+    }
+    
+    .profile-form {
+        > div {
+            font-family: $headers-font;
+            label {
+
+            }
+        }
+    }
+}
