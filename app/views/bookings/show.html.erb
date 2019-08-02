@@ -16,9 +16,14 @@
       </div>
       <!-- BOOKING -->
       <p><strong>Booking:</strong> &nbsp;<%= @booking.start_date %> to <%= @booking.end_date %></p>
-      
+
       <!-- EDIT BOOKING -->
-      <%= link_to "Edit Booking", edit_booking_path %>
+      <% if @booking.status != 'canceled' %>
+        <%= link_to "Edit Booking", edit_booking_path %>
+        <%= link_to "Cancel", booking_path(@booking, booking: {status: 'canceled'}), method: :put %>
+      <% else %>
+        <p>CANCELED</p>
+      <% end %>
     </div>
   </div>
 
