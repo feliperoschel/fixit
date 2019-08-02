@@ -1,5 +1,25 @@
 
 .paintings-show {
+  h4 {
+    text-align: center;
+    margin: 10px;
+  }
+  .row {
+    > .related-paintings {
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        background-size: cover;
+        padding: 0;
+        margin: 10px;
+    }
+    .text {
+        padding: 10px;
+        .price {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+    }
+  }
   h1 {
     text-align: center;
     margin: 60px 0 40px 0;
@@ -22,7 +42,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 500px;
+  width: 380px;
 }
 
 .card-trip > img {
@@ -56,7 +76,8 @@
   .price {
     margin-top: 6px;
     font-weight: bold;
-    color: $green;
+    color: black;
+    font-size: 14px;
   }
 }
 
@@ -80,7 +101,46 @@
   p {
     text-align: center;
   }
+  .card-review {
+    margin: 0 10vw;
+    .card-header {
+      font-size: 14px;
+    }
+    .card-body {
+      h6 {
+        font-style: normal;
+      }
+      p {
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+
   padding-bottom: 40px;
+}
+
+// RELATED
+.related {
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+
+// TAGS
+
+.tags {
+  text-align: center;
+  padding: 20px 0 20px 0;
+  margin-bottom: 4vw;
+  h4 {
+    margin-bottom: 2vw;
+  }
+  a {
+    margin: 0 2px;
+    border: solid 1px $green;
+    padding: 4px 6px;
+    border-radius: 10px;
+  }
 }
 
 }

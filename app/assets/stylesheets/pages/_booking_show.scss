@@ -1,12 +1,14 @@
 .bookings-show {
+  margin-bottom: 100px;
     > h2 {
         margin: 10vh 0;
     }
     > .row {
         div {
-            img {
-                height: 30vh;
+            .image-booking {
+                height: 60vh;
                 object-fit: cover;
+                border-radius: 5px;
             }
             .price-title-info {
                 display: flex;
@@ -30,7 +32,7 @@
             }
             // BOOKING
             > p {
-                margin: 2vh 0;
+                margin: 4vh 0;
             }
             // EDIT BOOKING BUTTON
             > a {
